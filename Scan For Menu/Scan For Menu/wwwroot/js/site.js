@@ -4,7 +4,6 @@
 // Write your JavaScript code.
 var tblNo;
 
-
 function openPage(pageName, elmnt) {
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;
@@ -34,12 +33,14 @@ function openPage(pageName, elmnt) {
 document.getElementById("defaultOpen").click();
 
 //incease and decrease elements in an order
-function increment() {
-    document.getElementById('item_qty').stepUp();
+function increment(id) {
+    var x = document.getElementsByClassName("tableNum");
+    x[id].stepUp();
 }
 
-function decrement() {
-    document.getElementById('item_qty').stepDown();
+function decrement(id) {
+    var x = document.getElementsByClassName("tableNum");
+    x[id].stepDown();
 }
 
 //scroll to top of screen
@@ -48,7 +49,62 @@ function scrollToTop() {
 }
 
 
-//get table number
-function getselectedvalue() {
-    return document.getElementById("table_numbers").value;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//get table number 
+function setTableNo(Id) {
+    tblNo = document.getElementById(Id).value;
 }
+
+//return the table number
+function gettableNo() {
+    return tblNo;
+}
+
+$(document).ready(function () {
+    $("#btnClick").click(function () {
+        $("#tableNo").modal("show");
+    });
+
+    setTableNo("#table_numbers")
+
+    $("#close").click(function () {
+       
+        $("#tableNo").modal("hide");
+    });
+});
+*/
