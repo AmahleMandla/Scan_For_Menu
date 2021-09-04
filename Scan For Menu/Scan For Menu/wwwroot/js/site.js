@@ -2,6 +2,9 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+var tblNo;
+
+
 function openPage(pageName, elmnt) {
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;
@@ -49,47 +52,3 @@ function scrollToTop() {
 function getselectedvalue() {
     return document.getElementById("table_numbers").value;
 }
-
-    //get the button/link from home page
-    var linkMenu = document.getElementById("btnClick");
-
-
-function showModal(modalId) {
-    var Modal = document.getElementById(modalId);
-    Modal.showModal;
-}
-
-    //get the value
-    var curValue = getselectedvalue();
-
-    //get the element that closes the modal
-    var closebtn = document.getElementById("btnOk");
-}
-
-/*
-$(document).ready(function () {
-    var curValue = getselectedvalue();
-
-    $("#btnClick").click(function () {
-        $("#tableNo").modal("show");
-    })
-
-    $("#close").click(function () {
-        if (curValue<=0) {
-            document.getElementById("errorMsg").innerHTML = "please select valid atble number";
-        }else
-        {
-            $("#tableNo").modal("hide");
-        }
-    })
-
-})
-function getTableNo(tableID) {
-    var tbllist = document.getElementById(tableID);
-    var tblNo = tbllist.options[selectedIndex].value;
-
-    if (tblNo==0) {
-
-    }
-}
-*/
