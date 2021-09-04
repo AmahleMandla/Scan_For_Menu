@@ -1,0 +1,153 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+body, html{
+width:100%;
+height:100%;
+}
+
+.logo_image{
+    opacity:0.65;
+    height: 100px;
+    width: 120px;
+}
+
+.logo_container{
+    /**/
+    margin-top:0px;
+    margin-left:0px;
+    position:absolute;
+    top:0%;
+    padding:4px;
+    justify-content:center;
+    text-align:center;
+}
+
+.logo {
+    font-size: 60px;
+    font-family: 'Allison', cursive;
+    color: #555;
+    text-decoration: none;
+}
+
+    .logo:hover {
+        text-decoration: none;
+        color: #555;
+    }
+
+
+    .navbar {
+        background: #d9c19c;
+        height: 200px;
+        z-index: 999;
+        position: relative;
+    }
+
+.nav_itemCont {
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    left:0px;
+    right:0px;
+    width:680px;
+    bottom:0px;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: CENTER;
+}
+
+.nav_cart {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: CENTER;
+    margin-right: 40px;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.tab{
+    border:solid;
+    border-radius:5px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.nav_tabs {
+    list-style: none;
+    color: #555;
+    justify-content: space-between;
+}
+
+a {
+    color: #555;
+}
+
+/**/
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: bisque;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width:20%;
+}
+
+    .tablink:hover {
+        background-color: #777;
+    }
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: #555;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+.container{
+    border: solid 2px;
+    margin-left: 0px;
+    margin-right:0px;
+    width:100%;
+    height:100%;
+}
+
+.pb-3{
+
+}
+
+#Drinks {
+    background-color: #d9c19d;
+}
+
+#Soups {
+    background-color: #d9c19e;
+}
+
+#Steaks {
+    background-color: #d9c19f;
+}
+#Burgers {
+    background-color: #d9c19c;
+}
+
+#Deserts {
+    background-color: #d9c19b;
+}
+
+/*add to order button and group*/
+.d-flex justify-content-between {
+    justify-content:center; 
+    margin: auto 25% auto 25%;
+}
+

@@ -1,0 +1,95 @@
+﻿body {
+    background-image: url('../Images/sebastian-coman-photography-1UanRBa1skQ-unsplash.jpg');
+    background-position:inherit;
+    position:relative;
+    background-size:cover;
+    background-repeat:no-repeat;
+    height:1440px;
+    justify-content:center;
+    align-items:center;
+}
+
+.welcome {
+    position: absolute;
+    top: 30%;
+    padding: 20px 20px 20px 20px;
+}
+
+.btn-link {
+    font-family:Impact;
+    font-size:34px;
+    text-align: center;
+}
+
+.btn-link:hover {
+   font-size:38px;
+}
+
+.message{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 72px;
+    font-style: italic;
+}
+
+.container {
+        position: relative;
+        height: 100%;
+        text-align: center;
+}
+
+/*modal csss*/
+#dialog {
+    position: absolute;
+    top: 40%;
+    left:15%;
+    border-radius: 8px 8px;
+    width: 600px;
+    font-size:1.5rem;
+}
+
+
+.body {
+    background-color: #d9c19c; 
+    font-family: 'Times New Roman', Times, serif;
+    height:150px;
+}
+
+.form {
+    font-size: 16px;
+}
+
+.modal-header {
+    background-color: #d9c19c;
+}
+
+.button {
+    background-color: grey;
+    color: antiquewhite;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 40px 20px 40px;
+    font-size: 25px;
+    font-family: Impact;
+    position: relative;
+    width: 200px;
+    height: 75px;
+    border-radius: 4px 4px;
+}
+
+.button:hover {
+    color: antiquewhite;
+}
+
+.modal-footer {
+    justify-content: center;
+    background-color: #d9c19c;
+}
+
+#table_numbers {
+    width: 200px;
+    height:50px;
+    background-color: #d9c19c;
+    text-align: center;
+    align-content:center;
+    justify-content: center;
+}
