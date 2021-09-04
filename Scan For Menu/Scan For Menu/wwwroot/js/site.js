@@ -43,3 +43,53 @@ function decrement() {
 function scrollToTop() {
     window.scrollTo(0, 0);
 }
+
+
+//get table number
+function getselectedvalue() {
+    return document.getElementById("table_numbers").value;
+}
+
+    //get the button/link from home page
+    var linkMenu = document.getElementById("btnClick");
+
+
+function showModal(modalId) {
+    var Modal = document.getElementById(modalId);
+    Modal.showModal;
+}
+
+    //get the value
+    var curValue = getselectedvalue();
+
+    //get the element that closes the modal
+    var closebtn = document.getElementById("btnOk");
+}
+
+/*
+$(document).ready(function () {
+    var curValue = getselectedvalue();
+
+    $("#btnClick").click(function () {
+        $("#tableNo").modal("show");
+    })
+
+    $("#close").click(function () {
+        if (curValue<=0) {
+            document.getElementById("errorMsg").innerHTML = "please select valid atble number";
+        }else
+        {
+            $("#tableNo").modal("hide");
+        }
+    })
+
+})
+function getTableNo(tableID) {
+    var tbllist = document.getElementById(tableID);
+    var tblNo = tbllist.options[selectedIndex].value;
+
+    if (tblNo==0) {
+
+    }
+}
+*/

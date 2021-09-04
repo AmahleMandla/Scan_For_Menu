@@ -13,6 +13,7 @@ namespace Scan_For_Menu.Controllers
 
 
         private readonly ApplicationDbContext _dbContext;
+       dynamic mymodel = new System.Dynamic.ExpandoObject();
 
         public MenuItemController(ApplicationDbContext dbContext)
         {
@@ -21,8 +22,23 @@ namespace Scan_For_Menu.Controllers
         public IActionResult Menu()
         {
             IEnumerable<MenuItem> menuItemObj = _dbContext.MenuItem;
+            IEnumerable<FoodCategory> categoyObj = _dbContext.FoodCategory;
 
-            return View(menuItemObj);
+            mymodel.MenuItem = menuItemObj;
+            mymodel.FoodCategory = categoyObj;
+            return View(mymodel);
+        }
+
+        //Get - Create
+        public IActionResult Create()
+        {
+            IEnumerable<MenuItem> menuItemObj = _dbContext.MenuItem;
+            IEnumerable<FoodCategory> categoyObj = _dbContext.FoodCategory;
+
+            mymodel.MenuItem = menuItemObj;
+            mymodel.FoodCategory = categoyObj;
+            return View(mymodel);
         }
     }
 }
+

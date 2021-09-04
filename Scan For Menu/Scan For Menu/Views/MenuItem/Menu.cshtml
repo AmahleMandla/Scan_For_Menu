@@ -1,11 +1,22 @@
-﻿@model IEnumerable<MenuItem>
+﻿@model dynamic
 
 @{
     ViewData["Title"] = "Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div >
+@{ 
+    var MenuItems = Model.MenuItem;
+    var Category = Model.FoodCategory;
+    //constants for the category ids
+    var drink = 3;
+    var soups = 5;
+    var steaks = 2;
+    var burgers = 1;
+    var deserts = 4;
+
+}
+<div>
     <div class="photo_gallary">
     </div>
     <div class="sticky-top">
@@ -16,55 +27,120 @@
         <button class="tablink" onclick="openPage('Deserts', this)">Deserts</button>
     </div>
 
+    @if (Model != null)
+    {
+<div id="Drinks" class="tabcontent">
 
-    <div id="Drinks" class="tabcontent">
-        <h3>Drinks Description</h3>
-        <br />
-        @if (Model.Count() > 0)
+    @foreach (FoodCategory cat in Category)
+    {
+        @if (@cat.CategoryId == drink)
         {
-            @foreach (var obj in Model)
-            {
-                @if (@obj.CategoryId == 3)
-                {
-                    <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
-    
-                        <div style=" display:flex;justify-content: center; align-content: center; text-align: center;">
-                            <img src="/MenuItem/@obj.ItemImage" class="card-img-top" style="width:40%;" align="middle" alt="...">
-                        </div>
-                        
-                        <div class="card-body">
-                            <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
-                            <p style="font-size:16px;" class="card-text">@obj.ItemDescr</p>
-                            <p style="font-size:25px; font-style:italic;" class="card-text">R @obj.ItemPrice</p>
-                            <br />
-                            <div class="d-flex justify-content-between" style="justify-content:center; margin: auto 25% auto 25%">
-                                <div>
-                                    <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="decrement()">-</button>
-                                    <input style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:50px; width:50px" id=item_qty type=number min=0 max=20>
-                                    <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment()">+</button>
-                                </div>
+            <div class="description">
+                <p>@cat.CategoryDescr</p>
+                <br />
+            </div>
 
-                                <!--Soumya use this button to get the number of items-->
-                                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" onclick="">Add to order</button>
+            break;
+        }
+    }
+
+    @foreach (var obj in MenuItems)
+    {
+        @if (@obj.CategoryId == drink)
+        {
+            <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
+
+                <div style=" display:flex;justify-content: center; align-content: center; text-align: center;">
+                    <img src="/MenuItem/@obj.ItemImage" class="card-img-top" style="width:40%;" align="middle" alt="...">
+                </div>
+
+                <div class="card-body">
+                    <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
+                    <p style="font-size:16px;" class="card-text">@obj.ItemDescr</p>
+                    <p style="font-size:25px; font-style:italic;" class="card-text">R @obj.ItemPrice</p>
+                    <br />
+                    <div class="d-flex justify-content-between" style="justify-content:center; margin: auto 25% auto 25%">
+                        <div>
+                            <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="decrement()">-</button>
+                            <input style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:50px; width:50px" id=item_qty type=number min=0 max=20>
+                            <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment()">+</button>
+                        </div>
+
+                        <!--Soumya use this button to get the number of items-->
+                        <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" onclick="">Add to order</button>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+        }
+    }
+</div>
+
+        <div id="Soups" class="tabcontent">
+                @foreach (FoodCategory cat in Category)
+                {
+                    @if (@cat.CategoryId == soups)
+                    {
+                        <div class="description">
+                            <p>@cat.CategoryDescr</p>
+                            <br />
+                        </div>
+                      
+                        break;
+                    }
+                }
+
+                @foreach (var obj in MenuItems)
+                {
+                    @if (@obj.CategoryId == soups)
+                    {
+                        <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
+
+                            <div style="justify-content: center; align-content: center; text-align: center;">
+                                <img src="/MenuItem/@obj.ItemImage" class="card-img-top" style="width:40%;" align="middle" alt="...">
+                            </div>
+
+                            <div class="card-body">
+                                <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
+                                <p style="font-size:16px;" class="card-text">@obj.ItemDescr</p>
+                                <p style="font-size:25px; font-style:italic;" class="card-text">R @obj.ItemPrice</p>
+                                <br />
+                                <div class="d-flex justify-content-between" style="justify-content:center; margin: auto 25% auto 25%">
+                                    <div>
+                                        <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="decrement()">-</button>
+                                        <input style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:50px; width:50px" id=item_qty type=number min=0 max=20>
+                                        <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment()">+</button>
+                                    </div>
+
+                                    <!--Soumya use this button to get the number of items-->
+                                    <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" onclick="">Add to order</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <br /><br />
+                        <br /><br />
+                    }
+                }
+        </div>
+
+        <div id="Steaks" class="tabcontent">
+            @foreach (FoodCategory cat in Category)
+            {
+                @if (@cat.CategoryId == steaks)
+                {
+            <div class="description">
+                <p>@cat.CategoryDescr</p>
+                <br />
+            </div>
+
+                    break;
                 }
             }
 
-        }
-    </div>
-
-    <div id="Soups" class="tabcontent">
-        <h3>Soups and everythig description</h3>
-        <br />
-        @if (Model.Count() > 0)
-        {
-            @foreach (var obj in Model)
+            @foreach (var obj in MenuItems)
             {
-                @if (@obj.CategoryId == 5)
+                @if (@obj.CategoryId == steaks)
                 {
                     <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
 
@@ -93,22 +169,29 @@
                     <br /><br />
                 }
             }
+        </div>
 
-        }
-    </div>
-
-    <div id="Steaks" class="tabcontent">
-        <h3>Steaks description</h3>
-        <br />
-        @if (Model.Count() > 0)
-        {
-            @foreach (var obj in Model)
+        <div id="Burgers" class="tabcontent">
+            @foreach (FoodCategory cat in Category)
             {
-                @if (@obj.CategoryId == 2)
+                @if (@cat.CategoryId == burgers)
+                {
+            <div class="description">
+                <p>@cat.CategoryDescr</p>
+                <br />
+            </div>
+
+                    break;
+                }
+            }
+
+            @foreach (var obj in MenuItems)
+            {
+                @if (@obj.CategoryId == burgers)
                 {
                     <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
 
-                        <div style="justify-content: center; align-content: center; text-align: center;">
+                        <div style=" justify-content: center; align-content: center; text-align: center;">
                             <img src="/MenuItem/@obj.ItemImage" class="card-img-top" style="width:40%;" align="middle" alt="...">
                         </div>
 
@@ -133,18 +216,27 @@
                     <br /><br />
                 }
             }
+        </div>
 
-        }
-    </div>
 
-    <div id="Burgers" class="tabcontent">
-        <h3>Burgers Description</h3>
-        <br />
-        @if (Model.Count() > 0)
-        {
-            @foreach (var obj in Model)
+
+        <div id="Deserts" class="tabcontent">
+            @foreach (FoodCategory cat in Category)
             {
-                @if (@obj.CategoryId == 1)
+                @if (@cat.CategoryId == deserts)
+                {
+                    <div class="description">
+                        <p>@cat.CategoryDescr</p>
+                        <br />
+                    </div>
+
+                    break;
+                }
+            }
+
+            @foreach (MenuItem obj in MenuItems)
+            {
+                @if (@obj.CategoryId == deserts)
                 {
                     <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
 
@@ -174,49 +266,8 @@
                 }
             }
 
-        }
-    </div>
 
+        </div>
 
-
-    <div id="Deserts" class="tabcontent">
-        <h3>Deserts menu</h3>
-        <br />
-        @if (Model.Count() > 0)
-        {
-            @foreach (var obj in Model)
-            {
-                @if (@obj.CategoryId == 4)
-                {
-                    <div class="card mb-30" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
-
-                        <div style=" justify-content: center; align-content: center; text-align: center;">
-                            <img src="/MenuItem/@obj.ItemImage" class="card-img-top" style="width:40%;" align="middle" alt="...">
-                        </div>
-
-                        <div class="card-body">
-                            <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
-                            <p style="font-size:16px;" class="card-text">@obj.ItemDescr</p>
-                            <p style="font-size:25px; font-style:italic;" class="card-text">R @obj.ItemPrice</p>
-                            <br />
-                            <div class="d-flex justify-content-between" style="justify-content:center; margin: auto 25% auto 25%">
-                                <div>
-                                    <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="decrement()">-</button>
-                                    <input style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:50px; width:50px" id=item_qty type=number min=0 max=20>
-                                    <button style="border-radius: 50%; background-color: #555 ; color: bisque; border: none; padding: 15px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment()">+</button>
-                                </div>
-
-                                <!--Soumya use this button to get the number of items-->
-                                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" onclick="">Add to order</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br /><br />
-                }
-            }
-
-        }
-    </div>
-
+    }
 </div>

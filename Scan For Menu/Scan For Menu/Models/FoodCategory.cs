@@ -12,6 +12,6 @@ namespace Scan_For_Menu.Models
         public int CategoryId { get; set; }
         [Required]
         public string CategoryName { get; set; }
-        public string CategoryDescription { get; set; }
+        public string CategoryDescr { get; set; }
     }
 }

@@ -53,7 +53,7 @@ namespace Scan_For_Menu.Data.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CategoryDescr = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

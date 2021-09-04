@@ -112,6 +112,7 @@ a {
     display: none;
     padding: 100px 20px;
     height: 100%;
+    text-align: center;
 }
 
 .container{
@@ -149,5 +150,11 @@ a {
 .d-flex justify-content-between {
     justify-content:center; 
     margin: auto 25% auto 25%;
+}
+
+.description {
+    font-family: 'Allison', cursive;
+    font-size: 60px;
+    height:80px;
 }
 

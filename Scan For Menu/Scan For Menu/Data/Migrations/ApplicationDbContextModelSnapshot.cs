@@ -56,7 +56,7 @@ namespace Scan_For_Menu.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CategoryDescription")
+                    b.Property<string>("CategoryDescr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CategoryName")

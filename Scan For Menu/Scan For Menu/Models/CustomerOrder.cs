@@ -34,6 +34,15 @@ namespace Scan_For_Menu.Models
         [DataType(DataType.Currency)]
         public decimal GratuityAmt { get; set; }
 
+        [NotMapped]
+        public Dictionary<MenuItem,int> orderItems { get; set; }
 
+
+
+
+        public CustomerOrder()
+        {
+               
+        }
     }
 }
