@@ -15,33 +15,35 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="navbar_container">
-                <div class="logo_container">
-                    <a class="logo" asp-area="" asp-controller="MenuItem" asp-action="Menu">
-                        <img class="logo_image" src="~/Images/logo.jpeg" />Amasole Steakhouse
-                    </a>
+        <div >
+            <nav class="navbar">
+                <div class="navbar_container">
+                    <div class="logo_container">
+                        <a class="logo" asp-area="" asp-controller="MenuItem" asp-action="Menu">
+                            <img class="logo_image" src="~/Images/logo.jpeg" />Amasole Steakhouse
+                        </a>
 
+                    </div>
+                    <br />
+                    <div class="nav_itemCont">
+                        <ul class="navbar_menu">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <!--create a menu item controller-->
+                                <a class="nav-link" asp-area="" asp-controller="MenuItem" asp-action="Menu">Menu</a>
+                            </li>
+                        </ul>
+                        <ul class="nav_cart">
+                            <li class="nav_cartitem">
+                                <a style="text-decoration:none; color:#555;" class="fas fa-shopping-cart" asp-area="" asp-controller="Cart" asp-action="ViewCart"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <br />
-                <div class="nav_itemCont">
-                    <ul class="navbar_menu">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <!--create a menu item controller-->
-                            <a class="nav-link" asp-area="" asp-controller="MenuItem" asp-action="Menu">Menu</a>
-                        </li>
-                    </ul>
-                    <ul class="nav_cart">
-                        <li class="nav_cartitem">
-                            <a style="text-decoration:none; color:#555;" class="fas fa-shopping-cart" asp-area="" asp-controller="Cart" asp-action="ViewCart"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <div>
         <main role="main" class="pb-3">

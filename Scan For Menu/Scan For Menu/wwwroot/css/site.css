@@ -12,15 +12,15 @@ height:100%;
     width: 120px;
 }
 
-.logo_container{
+.logo_container {
     /**/
-    margin-top:0px;
-    margin-left:0px;
-    position:absolute;
-    top:0%;
-    padding:4px;
-    justify-content:center;
-    text-align:center;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+    top: 0%;
+    padding: 4px;
+    justify-content: center;
+    text-align: center;
 }
 
 .logo {
@@ -36,29 +36,31 @@ height:100%;
     }
 
 
-    .navbar {
-        background: #d9c19c;
-        height: 200px;
-        z-index: 999;
-        position: relative;
-    }
+.navbar {
+    background: #d9c19c;
+    height: 200px;
+    z-index: 999;
+    position: relative;
+}
 
 .nav_itemCont {
-    position:absolute;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     height: 70px;
-    left:0px;
-    right:0px;
-    width:680px;
-    bottom:0px;
+    left: 0%;
+    right: 10%;
+    width: 90%;
+    bottom: 0px;
 }
 
 .navbar_menu {
     display: flex;
     align-items: center;
     list-style: none;
+    font-size:24px;
     text-align: CENTER;
+    font-style: italic;
 }
 
 .nav_cart {
@@ -71,9 +73,9 @@ height:100%;
     text-decoration: none;
 }
 
-.tab{
-    border:solid;
-    border-radius:5px;
+.tab {
+    border: solid;
+    border-radius: 5px;
     justify-content: space-between;
     padding: 10px;
 }
@@ -116,7 +118,6 @@ a {
 }
 
 .container{
-    border: solid 2px;
     margin-left: 0px;
     margin-right:0px;
     width:100%;

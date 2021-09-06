@@ -3,23 +3,22 @@ using Scan_For_Menu.Data;
 using Scan_For_Menu.Models;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Scan_For_Menu.Controllers
 {
-    public class MenuItemController : Controller
+    public class AdminController : Controller
     {
-
-
         private readonly ApplicationDbContext _dbContext;
-       dynamic mymodel = new System.Dynamic.ExpandoObject();
+        dynamic mymodel = new ExpandoObject();
 
-        public MenuItemController(ApplicationDbContext dbContext)
+        public AdminController(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public IActionResult Menu()
+        public IActionResult ViewItems()
         {
             IEnumerable<MenuItem> menuItemObj = _dbContext.MenuItem;
             IEnumerable<FoodCategory> categoyObj = _dbContext.FoodCategory;
@@ -30,4 +29,3 @@ namespace Scan_For_Menu.Controllers
         }
     }
 }
-

@@ -8,7 +8,7 @@
     <div class="welcome">
         <span class="message">EAT DRINK VISIT</span>
         <br /><br /><br /><br />
-        <a id="btnClick" class=" btn btn-link" data-toggle="modal" data-target="#tableNo"> Menu</a>
+        <a id="btnClick" class="btn-link" data-toggle="modal" data-target="#tableNo"> Menu</a>
     </div>
 
     <!--for the modal display to choose table number-->
@@ -24,7 +24,7 @@
                     <form class="form">
                         <label for="table_numbers" class="head-message" style="font-size:35px">Select your table : </label>
                         <br />
-                        <select id="table_numbers" name="table_numbers">
+                        <select id="table_numbers" name="table_numbers" onchange="getTblNo('btnOk','table_numbers')">
                             <option value=0>please select</option>
                             <option value=1> 1 </option>
                             <option value=2> 2 </option>
@@ -35,9 +35,9 @@
                             <option value=7> 7 </option>
                         </select>
                     </form>
-                    <label id="errorMsg"></label>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" >
+                    
                     <a id="btnOk" class="button" asp-area="" asp-controller="MenuItem" asp-action="Menu">Ok</a>
                 </div>
             </div>

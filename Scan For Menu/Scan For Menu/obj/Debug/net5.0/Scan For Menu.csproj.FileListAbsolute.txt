@@ -968,3 +968,5 @@ C:\Users\Amahle\Desktop\yr_3\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan F
 C:\Users\Amahle\Desktop\yr_3\Scan For Menu\Scan For Menu\obj\Debug\net5.0\ref\Scan For Menu.dll
 C:\Users\Amahle\Desktop\yr_3\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.pdb
 C:\Users\Amahle\Desktop\yr_3\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.genruntimeconfig.cache
+C:\Users\Amahle\Desktop\yr_3\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_layOut_Admin.cshtml.g.cs
+C:\Users\Amahle\Desktop\yr_3\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewItems.cshtml.g.cs

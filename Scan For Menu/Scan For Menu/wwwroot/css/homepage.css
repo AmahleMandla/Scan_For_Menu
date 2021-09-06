@@ -41,10 +41,13 @@
 #dialog {
     position: absolute;
     top: 40%;
-    left:15%;
+    left: 15%;
     border-radius: 8px 8px;
     width: 600px;
-    font-size:1.5rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    display: flex;
+    align-content: center;
 }
 
 
@@ -74,6 +77,7 @@
     width: 200px;
     height: 75px;
     border-radius: 4px 4px;
+    visibility:hidden;
 }
 
 .button:hover {
@@ -82,6 +86,8 @@
 
 .modal-footer {
     justify-content: center;
+    display:flex;
+    align-content:center;
     background-color: #d9c19c;
 }
 

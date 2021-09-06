@@ -48,8 +48,19 @@ function scrollToTop() {
     window.scrollTo(0, 0);
 }
 
+function getTblNo(btn, list) {
+    //get button
+   var btnOK = document.getElementById(btn);
+    //get value of table number
+    tblNo = document.getElementById(list).selectedIndex;
 
-
+    if ((tblNo >= 1) && (tblNo <= 7)) {
+        btnOK.style.visibility = "visible";
+    } else {
+        btnOK.style.visibility = "hidden";
+        alert("Please select Your Table Number");
+    }
+}
 
 
 
