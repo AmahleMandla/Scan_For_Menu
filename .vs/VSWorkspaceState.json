@@ -3,9 +3,12 @@
     "",
     "\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu",
+    "\\Scan For Menu\\Scan For Menu\\Views",
+    "\\Scan For Menu\\Scan For Menu\\Views\\Admin",
+    "\\Scan For Menu\\Scan For Menu\\Views\\Shared",
     "\\Scan For Menu\\Scan For Menu\\wwwroot",
     "\\Scan For Menu\\Scan For Menu\\wwwroot\\js"
   ],
-  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\wwwroot\\js\\site.js",
+  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

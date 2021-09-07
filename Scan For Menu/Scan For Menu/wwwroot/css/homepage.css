@@ -1,69 +1,108 @@
-﻿body {
-    background-image: url('../Images/sebastian-coman-photography-1UanRBa1skQ-unsplash.jpg');
-    background-position:inherit;
-    position:relative;
-    background-size:cover;
-    background-repeat:no-repeat;
-    height:1440px;
-    justify-content:center;
-    align-items:center;
-}
-
-.welcome {
-    position: absolute;
-    top: 30%;
-    padding: 20px 20px 20px 20px;
-}
-
-.btn-link {
-    font-family:Impact;
-    font-size:34px;
-    text-align: center;
-}
-
-.btn-link:hover {
-   font-size:38px;
-}
-
-.message{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 72px;
-    font-style: italic;
-}
-
-.container {
-        position: relative;
-        height: 100%;
-        text-align: center;
-}
-
-/*modal csss*/
-#dialog {
-    position: absolute;
-    top: 40%;
-    left: 15%;
-    border-radius: 8px 8px;
-    width: 600px;
-    font-size: 1.5rem;
+﻿body, html {
+    background-image: url('../Images/mathias-p-r-reding-2GIw6U_TOdk-unsplash.jpg');
+    background-position: inherit;
+    position: relative;
+    background-size: cover;
+    background-position-x:inherit;
+    background-repeat: no-repeat;
+    width:100%;
+    height: 100%;
     justify-content: center;
-    display: flex;
     align-content: center;
 }
 
 
-.body {
-    background-color: #d9c19c; 
-    font-family: 'Times New Roman', Times, serif;
-    height:150px;
+.welcome {
+    
+    color: burlywood;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    margin: 20% 20% 20% 20%;
+    justify-content: center;
+    align-content: center;
+    
 }
 
-.form {
-    font-size: 16px;
+.message {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 6rem;
+    font-style: italic;
+    text-align:center;
 }
+
+.btn-link {
+    font-family: Impact;
+    font-size: 3rem;
+    text-align: center;
+    text-align:center;
+    
+}
+
+    .btn-link:hover {
+        font-size: 3.5rem;
+    }
+
+/*modal csss*/
+#dialog {
+  
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    margin: auto 10% 20% 10%;
+    border-radius: 10px 10px;
+    width: 600px;
+    font-size: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.modal-body {
+    background-color: #d9c19c;
+    font-family: 'Times New Roman', Times, serif;
+    height: 150px;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+
+.form-group {
+    background-color: #d9c19c;
+    font-size: 16px;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+}
+
 
 .modal-header {
     background-color: #d9c19c;
 }
+
+.form-group {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size:1.6rem;
+    text-align:center;
+}
+
+.modal-footer {
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+    background-color: #d9c19c;
+}
+
+#table_numbers {
+    width: 200px;
+    height: 50px;
+    text-align:center;
+    font-size:1.5rem;
+    background-color: #d9c19c;
+}
+
 
 .button {
     background-color: grey;
@@ -77,25 +116,11 @@
     width: 200px;
     height: 75px;
     border-radius: 4px 4px;
-    visibility:hidden;
+    visibility: hidden;
 }
 
-.button:hover {
-    color: antiquewhite;
-}
+    .button:hover {
+        color: antiquewhite;
+    }
 
-.modal-footer {
-    justify-content: center;
-    display:flex;
-    align-content:center;
-    background-color: #d9c19c;
-}
 
-#table_numbers {
-    width: 200px;
-    height:50px;
-    background-color: #d9c19c;
-    text-align: center;
-    align-content:center;
-    justify-content: center;
-}

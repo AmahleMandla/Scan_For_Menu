@@ -1,9 +1,6 @@
 ﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
-// Write your JavaScript code.
-var tblNo;
-
 function openPage(pageName, elmnt) {
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;
@@ -52,15 +49,17 @@ function getTblNo(btn, list) {
     //get button
    var btnOK = document.getElementById(btn);
     //get value of table number
-    tblNo = document.getElementById(list).selectedIndex;
+    var tblNo = document.getElementById(list).value;
 
-    if ((tblNo >= 1) && (tblNo <= 7)) {
+    if ((tblNo >= 1) && (tblNo <= 10)) {
         btnOK.style.visibility = "visible";
     } else {
         btnOK.style.visibility = "hidden";
         alert("Please select Your Table Number");
+
     }
 }
+
 
 
 

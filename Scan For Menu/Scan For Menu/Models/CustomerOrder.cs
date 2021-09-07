@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.ComponentModel;
 
 namespace Scan_For_Menu.Models
 {
@@ -13,6 +13,7 @@ namespace Scan_For_Menu.Models
         [Key]
         public int OrderId { get; set; }
 
+        [DisplayName("Slect Table Number")]
         [Required]
         public int TableNr { get; set; }
 

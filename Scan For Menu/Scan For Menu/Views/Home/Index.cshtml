@@ -1,9 +1,11 @@
-﻿@{
+﻿@model Scan_For_Menu.Models.CustomerOrder
+@{
     ViewData["Title"] = "Home Page";
     Layout = "_IndexLayout";
 }
 
-<div class="container">
+
+
 
     <div class="welcome">
         <span class="message">EAT DRINK VISIT</span>
@@ -19,31 +21,33 @@
                     <h4 class="modal-title">Table Number</h4>
                     <button class="close" id="close" type="button" data-dismiss="modal">x</button>
                 </div>
+                <form class="form" method="post" asp-controller="MenuItem" asp-action="Menu">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label asp-for="TableNr" class="head-message"></label>
+                            <select asp-for="TableNr" id="table_numbers" onchange="getTblNo('btnOk','table_numbers')">
+                                <option value=""></option>
+                                <option value=1> 1 </option>
+                                <option value=2> 2 </option>
+                                <option value=3> 3 </option>
+                                <option value=4> 4 </option>
+                                <option value=5> 5 </option>
+                                <option value=6> 6 </option>
+                                <option value=7> 7 </option>
+                            </select>
+                            <span asp-validation-for="TableNr" class="text-danger"></span>
+                        </div>
 
-                <div class="body">
-                    <form class="form">
-                        <label for="table_numbers" class="head-message" style="font-size:35px">Select your table : </label>
-                        <br />
-                        <select id="table_numbers" name="table_numbers" onchange="getTblNo('btnOk','table_numbers')">
-                            <option value=0>please select</option>
-                            <option value=1> 1 </option>
-                            <option value=2> 2 </option>
-                            <option value=3> 3 </option>
-                            <option value=4> 4 </option>
-                            <option value=5> 5 </option>
-                            <option value=6> 6 </option>
-                            <option value=7> 7 </option>
-                        </select>
-                    </form>
-                </div>
-                <div class="modal-footer" >
-                    
-                    <a id="btnOk" class="button" asp-area="" asp-controller="MenuItem" asp-action="Menu">Ok</a>
-                </div>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <input id="btnOk" type="submit" value="OK" class="button" />
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
 
 
 

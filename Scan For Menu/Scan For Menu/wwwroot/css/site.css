@@ -159,3 +159,12 @@ a {
     height:80px;
 }
 
+.tableNumber {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 24px;
+    text-align: CENTER;
+    font-style: italic;
+}
+

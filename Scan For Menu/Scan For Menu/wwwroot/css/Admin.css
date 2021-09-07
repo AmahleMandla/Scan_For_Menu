@@ -1,2 +1,10 @@
-﻿body {
+﻿body, html {
+    background-color: #d9c19d;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.container {
+
 }
