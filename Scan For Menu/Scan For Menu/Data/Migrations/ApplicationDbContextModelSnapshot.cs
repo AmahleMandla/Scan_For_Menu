@@ -78,19 +78,20 @@ namespace Scan_For_Menu.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ItemDescription")
+                    b.Property<string>("ItemDescr")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("ItemImage")
+                    b.Property<string>("ItemImage")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ItemName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("ItemPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("ItemPrice")
+                        .HasColumnType("real");
 
                     b.Property<int>("MealPrepTime")
                         .HasColumnType("int");

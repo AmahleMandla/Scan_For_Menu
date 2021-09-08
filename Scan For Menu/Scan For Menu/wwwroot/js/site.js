@@ -60,6 +60,75 @@ function getTblNo(btn, list) {
     }
 }
 
+function addToCart(item, quantity) {
+    var itemId = $(item).attr("itemid");
+    //var itemQty = $(quantity).attr("togNo")
+    var itemQty = document.getElementById(quantity).value;
+    // alert(itemQty);
+
+    var formdata = new FormData();
+
+    formdata.append("itemId", itemId);
+    formdata.append("quantity", itemQty);
+
+    $.ajax({
+        async: true,
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        url: '/Cart/shoppingCart',
+        data: formdata,
+        success: function (data) {
+            if (data.success) {
+                alert("Added to cart")
+                // $("#cartItem").text(data.Counter);
+            }
+        },
+        error: function () {
+            alert("Unable to add to cart")
+        }
+    });
+}
+
+
+//calculate the gratuity'
+function calcTotal(subtotal, gratuityId) {
+    var gratuity = parseInt(document.getElementById(gratuityId).value);
+     total = gratuity + subtotal;
+   // alert(total);
+    var y = document.getElementById("totals").rows;
+    var x = y[3].cells;
+    x[1].innerHTML = "R " + total;
+}
+
+function updateCart(item, quantity) {
+    var itemId = $(item).attr("itemid");    
+    var itemQty = document.getElementById(quantity).value;   
+
+    var formdata = new FormData();
+
+    formdata.append("itemId", itemId);
+    formdata.append("quantity", itemQty);
+
+    $.ajax({
+        async: true,
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        url: '/Cart/updateCart',
+        data: formdata,
+        success: function (data) {
+            if (data.success) {
+               // alert("Added to cart")
+                // $("#cartItem").text(data.Counter);
+            }
+        },
+        error: function () {
+            //alert("Unable to add to cart")
+        }
+    });
+
+}
 
 
 

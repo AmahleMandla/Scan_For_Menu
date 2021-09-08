@@ -28,6 +28,14 @@ namespace Scan_For_Menu.Controllers
         {
             IEnumerable<MenuItem> menuItemObj = _dbContext.MenuItem;
             IEnumerable<FoodCategory> categoyObj = _dbContext.FoodCategory;
+            IEnumerable<Cart>cartObj = _dbContext.Cart;
+            
+            foreach(var curObj in _dbContext.Cart)
+            {
+                _dbContext.Remove(curObj);
+            }
+            _dbContext.SaveChanges();
+
             mymodel.MenuItem = menuItemObj;
             mymodel.FoodCategory = categoyObj;
             mymodel.CustomerOrder = obj;

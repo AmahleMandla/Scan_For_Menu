@@ -20,5 +20,6 @@ namespace Scan_For_Menu.Data
         public DbSet<CustomerOrder> CustomerOrder { get; set; }
         public DbSet<FoodCategory> FoodCategory { get; set; }
         public DbSet<OrderLine> OrderLine { get; set; }
+        public DbSet<Cart> Cart { get; set; }
     }
 }
