@@ -94,7 +94,7 @@ function addToCart(item, quantity) {
 //calculate the gratuity'
 function calcTotal(subtotal, gratuityId) {
     var gratuity = parseInt(document.getElementById(gratuityId).value);
-     total = gratuity + subtotal;
+   var total = gratuity + subtotal;
    // alert(total);
     var y = document.getElementById("totals").rows;
     var x = y[3].cells;
