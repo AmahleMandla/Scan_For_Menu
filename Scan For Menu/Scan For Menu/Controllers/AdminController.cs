@@ -31,9 +31,27 @@ namespace Scan_For_Menu.Controllers
             mymodel.MenuItem = menuItemObj;
             mymodel.FoodCategory = categoryObj;
         }
+
+       
         public IActionResult ViewItems()
         {
+           
             return View(mymodel);
+        }
+
+        [HttpPost]
+        public IActionResult filteredItems(IFormCollection keyValuePairs)
+        {
+            string filter = keyValuePairs["category"];
+            if (filter == "All")
+            {
+                return RedirectToAction("ViewItems");
+            }
+                FoodCategory category = _dbContext.FoodCategory.Where(obj => obj.CategoryName == filter).Single();
+                menuItemObj = _dbContext.MenuItem.Where(obj => obj.CategoryId == category.CategoryId);
+                mymodel.MenuItem = menuItemObj;
+                mymodel.FoodCategory = categoryObj;
+                return View(mymodel);
         }
 
         //GET - CREATE
@@ -57,12 +75,12 @@ namespace Scan_For_Menu.Controllers
                     string extension = Path.GetExtension(obj.Image.FileName);
                     string imageName = fileName + extension;
                     obj.ItemImage = imageName; //assign image name
-                    string path = Path.Combine(wwwrootPath + "/MenuItem/", imageName);
+                    string path = Path.Combine(wwwrootPath + "\\MenuItem\\", imageName);
 
-                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    using (var fileStream = new FileStream(path, FileMode.OpenOrCreate))
                     {
                         //Add file to path
-                        obj.Image.CopyToAsync(fileStream);
+                        obj.Image.CopyTo(fileStream);
                     }
 
                     foreach (FoodCategory category in categoryObj)
@@ -80,8 +98,6 @@ namespace Scan_For_Menu.Controllers
                     return RedirectToAction("ViewItems");
                 }
                 return View(obj);
-
-
             }
             catch(Exception e)
             {

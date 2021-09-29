@@ -35,10 +35,11 @@ namespace Scan_For_Menu.Models
 
         [DisplayName("Uplaod Image")]
         [NotMapped]
-        [Required]
+        [Required(ErrorMessage ="Upload Image")]
+        [DataType(DataType.ImageUrl)]
         public IFormFile Image { get; set; }
 
-        [Required]
+       
         public string ItemImage { get; set; }
 
         [DisplayName("Price")]
