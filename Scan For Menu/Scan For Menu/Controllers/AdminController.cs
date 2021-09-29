@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Scan_For_Menu.Data;
 using Scan_For_Menu.Models;
@@ -8,6 +9,7 @@ using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Scan_For_Menu.Controllers
 {
@@ -50,6 +52,7 @@ namespace Scan_For_Menu.Controllers
                 if (ModelState.IsValid)
                 {
                     string wwwrootPath = _hostEnvironment.WebRootPath;
+                    
                     string fileName = Path.GetFileNameWithoutExtension(obj.Image.FileName);
                     string extension = Path.GetExtension(obj.Image.FileName);
                     string imageName = fileName + extension;

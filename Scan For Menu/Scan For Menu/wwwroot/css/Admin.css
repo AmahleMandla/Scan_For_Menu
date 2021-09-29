@@ -8,3 +8,8 @@
 .container {
 
 }
+
+.btn btn-primary{
+    background-color:grey;
+    color:darkseagreen;
+}

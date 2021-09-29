@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Scan For Menu",
+    "\\Scan For Menu\\Scan For Menu",
+    "\\Scan For Menu\\Scan For Menu\\wwwroot",
+    "\\Scan For Menu\\Scan For Menu\\wwwroot\\css"
   ],
-  "SelectedNode": "\\Scan For Menu.sln",
+  "SelectedNode": "\\Scan For Menu\\Scan For Menu.sln",
   "PreviewInSolutionExplorer": false
 }

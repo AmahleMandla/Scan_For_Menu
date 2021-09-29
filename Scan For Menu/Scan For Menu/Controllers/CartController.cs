@@ -8,13 +8,14 @@ using Scan_For_Menu.Data;
 using Scan_For_Menu.Models;
 using System.Web;
 using Newtonsoft.Json;
+using Scan_For_Menu.Helpers;
 
 namespace Scan_For_Menu.Controllers
 {
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-        List<Cart> cartItems;
+        List<Cart> cartItems = new List<Cart>();
         Cart cartItem;
 
         public CartController(ApplicationDbContext dbContext)
@@ -27,10 +28,12 @@ namespace Scan_For_Menu.Controllers
         public IActionResult ViewCart()
         {
             //cartItems = ViewBag.CartItem as List<Cart>;
-            IEnumerable<Cart> CartItems = _dbContext.Cart;
-            calcTotal(CartItems);
-
-            return View(CartItems);
+            /*IEnumerable<Cart> CartItems = _dbContext.Cart;
+            */
+            
+            cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
+           // calcTotal(cartItems);
+            return View(cartItems);
         }
 
         private void calcTotal(IEnumerable<Cart> CartItems)
@@ -46,57 +49,84 @@ namespace Scan_For_Menu.Controllers
                 subtotal += (qnty * price);
             }
 
+
             ViewBag.Subtotal = subtotal;
             ViewBag.Gratuity = 0;
         }
         [HttpPost]
         public void shoppingCart(int ItemId, int Quantity)
         {
-            // cartItems = new List<Cart>();
-            // objCart.ItemId = ItemId;
-            IEnumerable<MenuItem> objItem = _dbContext.MenuItem.Where(curItem => curItem.ItemId == ItemId);
-                
-            IEnumerable<Cart> cartItem = _dbContext.Cart.Where(model => model.ItemId == ItemId);
 
-            Cart cartItemObj = null;
+            Cart cartItemObj = new Cart();
+            MenuItem menuItemObj = _dbContext.MenuItem.Single(model => model.ItemId == ItemId);
 
-            //
-            if (cartItem.Count() > 0)
+            if (HttpContext.Session.GetInt32("CartCounter") != null)
             {
-                cartItemObj = cartItem.Single(model => model.ItemId == ItemId);
+                cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
             }
-
-            MenuItem menuItemObj = new MenuItem();
-            try
+            if(cartItems.Any(model => model.ItemId == ItemId))
             {
-                
-               menuItemObj = objItem.Single(model => model.ItemId == ItemId);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            if (cartItemObj!=null)
-            {
-                if(menuItemObj != null)
-                {
-                    cartItemObj.ItemQty += Quantity;
-                    _dbContext.Update(cartItemObj);
-                    _dbContext.SaveChanges();
-                }               
+                cartItemObj = cartItems.Single(model => model.ItemId == ItemId);
+                cartItemObj.ItemQty += Quantity;
+                cartItemObj.ItemPrice = menuItemObj.ItemPrice;
             }
             else
             {
+
                 cartItemObj = new Cart();
                 cartItemObj.ItemId = ItemId;
                 cartItemObj.ItemName = menuItemObj.ItemName;
                 cartItemObj.ItemQty = Quantity;
-                cartItemObj.ItemPrice = (menuItemObj.ItemPrice);
-                _dbContext.Add(cartItemObj);
-                _dbContext.SaveChanges();
+                cartItemObj.ItemPrice =(menuItemObj.ItemPrice);
+                cartItems.Add(cartItemObj);
             }
-          }
+            HttpContext.Session.SetInt32("CartCounter",cartItems.Count);
+            SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
+            // objCart.ItemId = ItemId;
+            /*  IEnumerable<MenuItem> objItem = _dbContext.MenuItem.Where(curItem => curItem.ItemId == ItemId);
+
+              IEnumerable<Cart> cartItem = _dbContext.Cart.Where(model => model.ItemId == ItemId);
+
+              Cart cartItemObj = null;
+
+              //
+              if (cartItem.Count() > 0)
+              {
+                  cartItemObj = cartItem.Single(model => model.ItemId == ItemId);
+              }
+
+              MenuItem menuItemObj = new MenuItem();
+              try
+              {
+
+                 menuItemObj = objItem.Single(model => model.ItemId == ItemId);
+              }
+              catch(Exception e)
+              {
+                  Console.WriteLine(e.Message);
+              }
+
+              if (cartItemObj!=null)
+              {
+                  if(menuItemObj != null)
+                  {
+                      cartItemObj.ItemQty += Quantity;
+                      _dbContext.Update(cartItemObj);
+                      _dbContext.SaveChanges();
+                  }               
+              }
+              else
+              {
+                  cartItemObj = new Cart();
+                  cartItemObj.ItemId = ItemId;
+                  cartItemObj.ItemName = menuItemObj.ItemName;
+                  cartItemObj.ItemQty = Quantity;
+                  cartItemObj.ItemPrice = (menuItemObj.ItemPrice);
+                  _dbContext.Add(cartItemObj);
+                  _dbContext.SaveChanges();
+              }
+            */
+        }
 
         [HttpPost]
         public IActionResult updateCart(int ItemId, int Quantity)

@@ -36,7 +36,7 @@ namespace Scan_For_Menu.Models
         [DisplayName("Uplaod Image")]
         [NotMapped]
         [Required]
-        public IFormFile  Image { get; set; }
+        public IFormFile Image { get; set; }
 
         [Required]
         public string ItemImage { get; set; }

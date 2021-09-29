@@ -1,7 +1,7 @@
 ﻿body, html {
-    background-image: url('../Images/mathias-p-r-reding-2GIw6U_TOdk-unsplash.jpg');
+    background-image: url('../Images/ella-olsson-oPBjWBCcAEo-unsplash.jpg');
     background-position: inherit;
-    position: relative;
+    position:initial;
     background-size: cover;
     background-position-x:inherit;
     background-repeat: no-repeat;
@@ -13,15 +13,13 @@
 
 
 .welcome {
-    
-    color: burlywood;
-    position: absolute;
+    color: #cc7b58;
+    position:absolute;
     left: 10%;
     right: 10%;
-    margin: 20% 20% 20% 20%;
+    margin: 25% 40% 10% 45%;
     justify-content: center;
     align-content: center;
-    
 }
 
 .message {
@@ -33,7 +31,7 @@
 
 .btn-link {
     font-family: Impact;
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
     text-align:center;
     
