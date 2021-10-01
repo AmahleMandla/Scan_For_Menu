@@ -36,7 +36,7 @@ namespace Scan_For_Menu.Models
         public decimal GratuityAmt { get; set; }
 
         [NotMapped]
-        public Dictionary<MenuItem,int> orderItems { get; set; }
+        public List<Cart> orderItems { get; set; }
 
 
 

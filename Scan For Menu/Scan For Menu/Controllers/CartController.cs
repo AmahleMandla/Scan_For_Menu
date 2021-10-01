@@ -25,29 +25,10 @@ namespace Scan_For_Menu.Controllers
         // GET: CartController
         public IActionResult ViewCart()
         {
-            cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");           
-            return View(cartItems);
-        }
-
-        [Route("/Cart/choosePayment/{total}")]
-        public IActionResult choosePayment(float total)
-        {          
-            ViewBag.totalAmt = total;
+            cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
+            ViewBag.Model = cartItems;
             return View();
         }
-        //soumya
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult something(ChoosePayment obj)
-        {
-            // if credit/debit chosen return payOnline
-            if (obj.paymentType == "Card")
-                return View(); // return payOnline
-            else
-                return View(); // , generate meal prep
-
-        }
-
 
 
 

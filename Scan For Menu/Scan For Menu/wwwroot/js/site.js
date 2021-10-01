@@ -60,7 +60,18 @@ function getTblNo(btn, list) {
     }
 }
 
+function snackbar() {
+    // Get the snackbar DIV
+   }
+
 function addToCart(item, quantity) {
+
+    var x = document.getElementById("snackbar");
+    // Add the "show" class to DIV
+    x.className = "show";
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+
     var itemId = $(item).attr("itemid");
     //var itemQty = $(quantity).attr("togNo")
     var itemQty = document.getElementById(quantity).value;

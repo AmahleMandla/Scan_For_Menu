@@ -1143,3 +1143,5 @@ C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Ra
 C:\Users\Lerato\Desktop\Project - WRR301\Project new\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\filteredItems.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\Project new\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewReport.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\Project new\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Cart\ChoosePayment.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewReport.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Order\choosePayment.cshtml.g.cs

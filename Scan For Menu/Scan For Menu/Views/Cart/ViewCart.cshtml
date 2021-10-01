@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Http;
-@model IEnumerable<Scan_For_Menu.Models.Cart>
+@model Scan_For_Menu.Models.CustomerOrder
 @{
     ViewData["Title"] = "ViewCart";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,100 +13,103 @@
 @if (Context.Session.GetInt32("CartCounter") != null)
 {
 
-    <div class="container " style="margin: auto 0px auto 0px; width:stretch; left:10%;">
-        <div class="row pt-4">
-            <div class="col-6">
-                <h3 class="text-primary"></h3>
-            </div>
-            <div class="col-6 text-right">
-                <a style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" asp-area="" asp-controller="Cart" asp-action="clearCart" class="btn btn-primary">
-                    <i class="fas fa-minus"></i> &nbsp; Clear cart
-                </a>
-            </div>
+<div class="container " style="margin: auto 0px auto 0px; width:stretch; left:10%;">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h3 class="text-primary"></h3>
         </div>
+        <div class="col-6 text-right">
+            <a style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" asp-area="" asp-controller="Cart" asp-action="clearCart" class="btn btn-primary">
+                <i class="fas fa-minus"></i> &nbsp; Clear cart
+            </a>
+        </div>
+    </div>
 
-        <br /><br />
-    
-        <table class="table table-bordered table-striped" style=" margin:auto 5% auto 5%; width:100%">
+    <br /><br />
+
+    <!--Incomplete finish when we meet-->
+    <form asp-controller="Order" asp-action="choosePayment" method="post" >
+        <input  asp-for="orderItems" value="@ViewBag.Model"/>
+    <table class="table table-bordered table-striped" style=" margin:auto 5% auto 5%; width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in @ViewBag.Model)
+            {
+                subTotal += @obj.ItemPrice * @obj.ItemQty;
+                TotalAmount = gratuity + subTotal;
+                <tr>
+                    <td width="15%" class="text-center">@obj.ItemName</td>
+                    <td width="25%" class="text-center"> @String.Format("R {0}", @obj.ItemPrice)</td>
+                    <td width="40%" class="text-center">
+                        <div>
+                            <button style="border-radius: 30%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
+                            <input class="tableNum" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:40px" id=@togNo type=number value="@obj.ItemQty" min=0 max=20>
+                            <button style="border-radius: 30%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" id="order_toggle" onclick="increment(@togNo)">+</button>
+                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" class="button" id="update_order" itemid="@obj.ItemId" onclick="updateCart(this,@togNo)">Update</button>
+                        </div>
+                    </td>
+                    <td width="10%" class="text-center">
+                        <div class="w-75 btn-group" role="group">
+                            <a type="s" asp-controller="Cart" asp-route-id="@obj.ItemId" asp-action="removeItem" class="btn btn-danger mx-2 far fa-trash-alt"></a>
+                        </div>
+
+                    </td>
+                </tr>
+
+                togNo = togNo + 1;
+            }
+        </tbody>
+    </table>
+    <br /> <br />
+
+
+    <div style="margin:auto 5% auto 5%; width:100%;">
+        <table class="table table-striped" id="totals">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th></th>
+                    <th width="50%" class="text-center"></th>
+                    <th width="50%" class="text-center"></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var obj in Model)
-                {
-                    subTotal += @obj.ItemPrice * @obj.ItemQty;
-                    TotalAmount = gratuity + subTotal;
-                    <tr>
-                        <td width="15%" class="text-center">@obj.ItemName</td>
-                        <td width="25%" class="text-center"> @String.Format("R {0}", @obj.ItemPrice)</td>
-                        <td width="40%" class="text-center">
-                            <div>
-                                <button style="border-radius: 30%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
-                                <input class="tableNum" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:40px" id=@togNo type=number value="@obj.ItemQty" min=0 max=20>
-                                <button style="border-radius: 30%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" id="order_toggle" onclick="increment(@togNo)">+</button>
-                                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" class="button" id="update_order" itemid="@obj.ItemId" onclick="updateCart(this,@togNo)">Update</button>
-                            </div>
-                        </td>
-                        <td width="10%" class="text-center">
-                            <div class="w-75 btn-group" role="group">
-                                <a type="s" asp-controller="Cart" asp-route-id="@obj.ItemId" asp-action="removeItem" class="btn btn-danger mx-2 far fa-trash-alt"></a>
-                            </div>
-
-                        </td>
-                    </tr>
-
-                    togNo = togNo + 1;
-                }
+                <tr>
+                    <td width="50%" class="text-center">
+                        Subtotal :
+                    </td>
+                    <td width="50%" class="text-center">R <label asp-for="OrderTotal"> @subTotal.ToString()</label></td>
+                </tr>
+                <tr>
+                    <td width="50%" class="text-center">
+                        Gratuity :
+                    </td>
+                    <td width="50%" class="text-center">
+                        <input asp-for="GratuityAmt" oninput="calcTotal(@subTotal.ToString(), 'gratuityID')" class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="gratuityID" type=number value=@gratuity min=0 max=1000 />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" class="text-center">
+                        Total :
+                    </td>
+                    <td id="totalAmt" value="total" width="50%" class="text-center">
+                        R  @TotalAmount.ToString()
+</td>
+                </tr>
             </tbody>
         </table>
-        <br /> <br />
-
-        <form >
-            <div style="margin:auto 5% auto 5%; width:100%;">
-                <table class="table table-striped" id="totals">
-                    <thead>
-                        <tr>
-                            <th width="50%" class="text-center"></th>
-                            <th width="50%" class="text-center"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td width="50%" class="text-center">
-                                Subtotal :
-                            </td>
-                            <td width="50%" class="text-center">R @subTotal.ToString()</td>
-                        </tr>
-                        <tr>
-                            <td width="50%" class="text-center">
-                                Gratuity :
-                            </td>
-                            <td width="50%" class="text-center">
-                                <input oninput="calcTotal(@subTotal.ToString(), 'gratuityID')"  class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="gratuityID" type=number value=@gratuity min=0 max=1000 />                                
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="50%" class="text-center">
-                                Total :
-                            </td>
-                            <td id="totalAmt" value="total" width="50%" class="text-center">
-                                R @TotalAmount.ToString()
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="btnSubmit" style="justify-content:center; align-content:center;align-items:center">
-                <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" asp-action="choosePayment" asp-controller="Cart" asp-route-id="@TotalAmount" id="btnProceed" type="submit" value="Proceed to payment" class="btnProceed" />
-            </div>
-        </form>
     </div>
+
+    <div class="btnSubmit" style="justify-content:center; align-content:center;align-items:center">
+        <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" asp-action="choosePayment" asp-controller="Order" id="btnProceed" type="submit" value="Proceed to payment" class="btnProceed" />
+    </div>
+    </form>
+</div>
 
 }
 else

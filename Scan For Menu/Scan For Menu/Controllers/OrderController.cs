@@ -12,11 +12,7 @@ namespace Scan_For_Menu.Controllers     //latest
     public class OrderController : Controller
     {
         private readonly ApplicationDbContext amasole_db;
-        private int tableNr { get; set; } //for the table number
-        private int orderId { get; set; } //order number
-        private float gratuity { get; set; } //tip
-        private float orderTotal { get; set; } //total paid
-        private Dictionary<MenuItem, int> orderItems { get; set; } //store the items in an order along with qnty
+      
 
         //links the databse to this controller
         public OrderController(ApplicationDbContext db)
@@ -25,14 +21,33 @@ namespace Scan_For_Menu.Controllers     //latest
         }
 
 
-        
-        
+
+
 
         // GET: CustomerOrderController
-        public IActionResult Menu()
+       
+        [HttpPost]
+        public IActionResult choosePayment(CustomerOrder total)
         {
+            ViewBag.totalAmt = total;
             return View();
         }
+
+
+        //soumya
+        [Route("/Order/choosePayment/{total}")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult something(ChoosePayment obj)
+        {
+            // if credit/debit chosen return payOnline
+            if (obj.paymentType == "Card")
+                return View(); // return payOnline
+            else
+                return View(); // , generate meal prep
+
+        }
+
 
         // GET: CustomerOrderController/Details/5
         public IActionResult Details(int id)
