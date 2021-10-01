@@ -28,6 +28,13 @@ namespace Scan_For_Menu.Controllers
             cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");           
             return View(cartItems);
         }
+
+        [Route("/Cart/choosePayment/{total}")]
+        public IActionResult choosePayment(float total)
+        {          
+            ViewBag.totalAmt = total;
+            return View();
+        }
         //soumya
         [HttpPost]
         [ValidateAntiForgeryToken]

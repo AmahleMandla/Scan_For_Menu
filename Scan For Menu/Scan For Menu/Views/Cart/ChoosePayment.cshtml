@@ -1,12 +1,13 @@
 ﻿@model Scan_For_Menu.Models.ChoosePayment
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "choosePayment";
     Layout = "~/Views/Shared/_Layout.cshtml";       // soumya
+    
 
 }
 
 <div>
-    <a asp-area="" asp-controller="" asp-action="">back</a>
+    <a  asp-controller="Cart" asp-action="ViewCart">back</a>
 
 </div>
 
@@ -14,7 +15,7 @@
 <h2>Payment</h2>
 <div class="jumbotron"></div>
 <h3> Total</h3>
-<h4> Rxxx</h4>
+<h4> R @ViewBag.totalAmt</h4>
 <hr class="my-4">
 
 <form method="post" asp-action="Payment">
@@ -22,12 +23,12 @@
     <div>
         <h4>Choose payment option</h4>
         <input asp-for="paymentType" class="form-control" type="radio" id="cashID" name="payment" value="Cash">
-        <label asp-for="paymentType" class="control-label" for="cashID">Cash</label><br>
+        <label asp-for="paymentType" class="control-label" for="cashID">Cash </label><br>
         <input asp-for="paymentType" class="control-label" type="radio" id="CardID" name="payment" value="Card">
         <label asp-for="paymentType" class="control-label" for="cardID">Card </label><br />
     </div>
     <div>
-        <button name="simple_button" type="submit" value="Proceed"></button>
+        <button name="simple_button" type="submit" value="Proceed">Proceed</button>
     </div>
 </form>
 

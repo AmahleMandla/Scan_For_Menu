@@ -26,7 +26,7 @@
         </div>
 
         <br /><br />
-
+    
         <table class="table table-bordered table-striped" style=" margin:auto 5% auto 5%; width:100%">
             <thead>
                 <tr>
@@ -66,7 +66,7 @@
         </table>
         <br /> <br />
 
-        <form>
+        <form >
             <div style="margin:auto 5% auto 5%; width:100%;">
                 <table class="table table-striped" id="totals">
                     <thead>
@@ -87,14 +87,14 @@
                                 Gratuity :
                             </td>
                             <td width="50%" class="text-center">
-                                <input oninput="calcTotal(@subTotal.ToString(), 'gratuityID')" class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="gratuityID" type=number value=@gratuity min=0 max=100 />
+                                <input oninput="calcTotal(@subTotal.ToString(), 'gratuityID')"  class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="gratuityID" type=number value=@gratuity min=0 max=100 />                                
                             </td>
                         </tr>
                         <tr>
                             <td width="50%" class="text-center">
                                 Total :
                             </td>
-                            <td id="total" width="50%" class="text-center">
+                            <td id="totalAmt" value="total" width="50%" class="text-center">
                                 R @TotalAmount.ToString()
                             </td>
                         </tr>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="btnSubmit" style="justify-content:center; align-content:center;align-items:center">
-                <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" id="btnProceed" type="submit" value="Proceed to payment" class="btnProceed" />
+                <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" asp-action="choosePayment" asp-controller="Cart" asp-route-id="@TotalAmount" id="btnProceed" type="submit" value="Proceed to payment" class="btnProceed" />
             </div>
         </form>
     </div>
@@ -155,10 +155,6 @@ else
                             </tr>
                         </tbody>
                     </table>
-                </div>
-
-                <div class="btnSubmit" style="justify-content:center; align-content:center;align-items:center">
-                    <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" id="btnProceed" type="submit" value="Proceed to payment" class="btnProceed" />
                 </div>
             </form>
         </tbody>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Soumza\\source\\repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {}
+    "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Project new\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Soumza\\source\\repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {
+    "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Project new\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Soumza\\source\\repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
+        "projectUniqueName": "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Project new\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
         "projectName": "Scan For Menu",
-        "projectPath": "C:\\Users\\Soumza\\source\\repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
-        "packagesPath": "C:\\Users\\Soumza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Soumza\\source\\repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\obj\\",
+        "projectPath": "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Project new\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
+        "packagesPath": "C:\\Users\\Lerato\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Project new\\Scan For Menu\\Scan For Menu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Soumza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lerato\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

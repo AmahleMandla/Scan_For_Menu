@@ -99,6 +99,7 @@ function calcTotal(subtotal, gratuityId) {
     var y = document.getElementById("totals").rows;
     var x = y[3].cells;
     x[1].innerHTML = "R " + total;
+    return gratuity;
 }
 
 function updateCart(item, quantity) {
