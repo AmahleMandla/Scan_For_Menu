@@ -7858,19 +7858,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amahle\\.nuget\\packages\\": {}
+    "C:\\Users\\Soumza\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
+      "projectUniqueName": "C:\\Users\\Soumza\\Source\\Repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
       "projectName": "Scan For Menu",
-      "projectPath": "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
-      "packagesPath": "C:\\Users\\Amahle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\obj\\",
+      "projectPath": "C:\\Users\\Soumza\\Source\\Repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
+      "packagesPath": "C:\\Users\\Soumza\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Soumza\\Source\\Repos\\Scan_For_Menu\\Scan For Menu\\Scan For Menu\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Amahle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Soumza\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7949,7 +7949,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Scan_For_Menu.Controllers
+namespace Scan_For_Menu.Controllers     //latest
 {
     public class OrderController : Controller
     {
@@ -24,6 +24,8 @@ namespace Scan_For_Menu.Controllers
             amasole_db = db;
         }
 
+
+        
         
 
         // GET: CustomerOrderController

@@ -32,7 +32,10 @@ namespace Scan_For_Menu.Controllers
             mymodel.FoodCategory = categoryObj;
         }
 
-       
+        public ActionResult Report() // (me linked viewReport)
+        {
+            return View();
+        }
         public IActionResult ViewItems()
         {
            

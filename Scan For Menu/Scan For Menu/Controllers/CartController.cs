@@ -28,6 +28,21 @@ namespace Scan_For_Menu.Controllers
             cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");           
             return View(cartItems);
         }
+        //soumya
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult something(ChoosePayment obj)
+        {
+            // if credit/debit chosen return payOnline
+            if (obj.paymentType == "Card")
+                return View(); // return payOnline
+            else
+                return View(); // , generate meal prep
+
+        }
+
+
+
 
         [HttpPost]
         public void shoppingCart(int ItemId, int Quantity)
