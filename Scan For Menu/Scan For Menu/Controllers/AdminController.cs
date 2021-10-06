@@ -36,11 +36,13 @@ namespace Scan_For_Menu.Controllers
         {
             return View();
         }
+
         public IActionResult ViewItems()
         {
            
             return View(mymodel);
         }
+
 
         [HttpPost]
         public IActionResult filteredItems(IFormCollection keyValuePairs)
@@ -55,6 +57,18 @@ namespace Scan_For_Menu.Controllers
                 mymodel.MenuItem = menuItemObj;
                 mymodel.FoodCategory = categoryObj;
                 return View(mymodel);
+        }
+
+        public IActionResult Dashboard()
+        {
+
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+
+            return View();
         }
 
         //GET - CREATE

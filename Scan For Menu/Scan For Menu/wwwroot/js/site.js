@@ -175,6 +175,7 @@ function updateCart(item, quantity) {
 
 
 
+
 /*
 //get table number 
 function setTableNo(Id) {
