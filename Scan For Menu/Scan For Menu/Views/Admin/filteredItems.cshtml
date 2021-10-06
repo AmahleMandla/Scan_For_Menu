@@ -16,7 +16,7 @@
             <h2 class="text-primary">Menu Items List</h2>
         </div>
         <div class="col-6 text-right">
-            <a asp-controller="Admin" asp-action="Create" class="btn btn-primary">
+            <a asp-controller="Admin" asp-action="Create" class="btnConfirm">
                 <i class="fas fa-plus"></i> &nbsp; Add a new item
             </a>
         </div>
@@ -43,7 +43,7 @@
                 <option value="Deserts">Deserts</option>
                 <option value="Soup, Salad and Sides">Soup, Salad and Sides</option>
             </select>
-            <input type="submit" formmethod="post" value="filter" class="btn btn-primary" id="submitBtn" />
+            <input type="submit" formmethod="post" value="filter" class="btnConfirm" id="submitBtn" />
         </div>
     </form>
 
@@ -80,7 +80,7 @@
                         }
                         <td class="text-center">
                             <div class="w-75 btn-group" role="group">
-                                <a asp-controller="Category" asp-route-Id="@obj.ItemId" asp-action="Edit" class="btn btn-primary mx-2 fas fa-edit">Edit</a>
+                                <a asp-controller="Category" asp-route-Id="@obj.ItemId" asp-action="Edit" style="color: #32be8f " class="mx-2 fas fa-edit">Edit</a>
                                 <a asp-controller="Category" asp-route-Id="@obj.ItemId" asp-action="Delete" class="btn btn-danger mx-2 far fa-trash-alt"></a>
                             </div>
                         </td>
