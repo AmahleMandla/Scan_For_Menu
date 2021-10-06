@@ -19,5 +19,7 @@ namespace Scan_For_Menu.Helpers
             var value = session.GetString(key);
             return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
         }
+
+ 
     }
 }

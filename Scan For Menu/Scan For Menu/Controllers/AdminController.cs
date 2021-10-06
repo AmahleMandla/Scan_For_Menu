@@ -65,11 +65,6 @@ namespace Scan_For_Menu.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-
-            return View();
-        }
 
         //GET - CREATE
         public IActionResult Create() {

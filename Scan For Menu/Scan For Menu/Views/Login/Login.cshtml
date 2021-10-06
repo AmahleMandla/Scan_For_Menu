@@ -1,0 +1,39 @@
+﻿@model Scan_For_Menu.Models.Staff
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@{
+}
+
+<img class="wave" src="~/Images/wave.png">
+<div class="container">
+    <div class="img">
+        <img src="~/Images/login.svg">
+    </div>
+    <div class="login-content">
+        <form method="post" asp-controller="Login" asp-action="Login">
+            <img src="~/Images/avatar.svg">
+            <h2 class="title">Welcome</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <h5>Staff ID</h5>
+                    <input asp-for="StaffId" id="staffId" name="staffId" type="text" class="input">
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <h5>Password</h5>
+                    <input asp-for="Password" id="password" name="password" type="password" class="input">
+                </div>
+            </div>
+            <input type="submit" class="btn" value="Login" asp-action="Login" asp-controller="Login">
+        </form>
+    </div>
+</div>

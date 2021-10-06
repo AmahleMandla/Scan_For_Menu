@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Scan_For_Menu.Data;
 using Scan_For_Menu.Models;
@@ -26,6 +27,7 @@ namespace Scan_For_Menu.Controllers
         
         public IActionResult Menu(CustomerOrder obj)
         {
+            HttpContext.Session.SetString("tableNum", obj.TableNr.ToString());
             IEnumerable<MenuItem> menuItemObj = _dbContext.MenuItem;
             IEnumerable<FoodCategory> categoyObj = _dbContext.FoodCategory;
           

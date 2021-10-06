@@ -13,7 +13,7 @@ namespace Scan_For_Menu.Models
         [Key]
         public int OrderId { get; set; }
 
-        [DisplayName("Slect Table Number")]
+        [DisplayName("Select Table Number")]
         [Required]
         public int TableNr { get; set; }
 

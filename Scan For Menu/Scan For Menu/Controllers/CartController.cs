@@ -15,19 +15,18 @@ namespace Scan_For_Menu.Controllers
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-        List<Cart> cartItems = new List<Cart>();    
+        List<Cart> cartItems = new List<Cart>();
 
         public CartController(ApplicationDbContext dbContext)
         {
-            _dbContext = dbContext;            
+            _dbContext = dbContext;
 
         }
         // GET: CartController
         public IActionResult ViewCart()
         {
             cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
-            ViewBag.Model = cartItems;
-            return View();
+            return View(cartItems);
         }
 
 
@@ -43,33 +42,33 @@ namespace Scan_For_Menu.Controllers
             {
                 cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
             }
-            if(cartItems.Any(model => model.ItemId == ItemId))
+            if (cartItems.Any(model => model.ItemId == ItemId))
             {
                 cartItemObj = cartItems.Single(model => model.ItemId == ItemId);
                 cartItemObj.ItemQty += Quantity;
                 cartItemObj.ItemPrice = menuItemObj.ItemPrice;
             }
             else
-            {             
+            {
                 cartItemObj.ItemId = ItemId;
                 cartItemObj.ItemName = menuItemObj.ItemName;
                 cartItemObj.ItemQty = Quantity;
-                cartItemObj.ItemPrice =(menuItemObj.ItemPrice);
+                cartItemObj.ItemPrice = (menuItemObj.ItemPrice);
                 cartItems.Add(cartItemObj);
             }
-            HttpContext.Session.SetInt32("CartCounter",cartItems.Count);
+            HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
-          }
-        
+        }
+
         public IActionResult updateCart(int ItemId, int Quantity)
-        {                      
+        {
             Cart cartItemObj = new Cart();
             cartItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
             cartItemObj = cartItems.Single(model => model.ItemId == ItemId);
 
             if (Quantity > cartItemObj.ItemQty)
             {
-                cartItemObj.ItemQty += (Quantity- cartItemObj.ItemQty);
+                cartItemObj.ItemQty += (Quantity - cartItemObj.ItemQty);
             }
             else
             {
@@ -84,12 +83,13 @@ namespace Scan_For_Menu.Controllers
 
             }
 
-            if(cartItemObj.ItemQty == 0)
+            if (cartItemObj.ItemQty == 0)
             {
                 cartItems.Remove(cartItemObj);
-            }else if (cartItemObj.ItemQty > 20)
+            }
+            else if (cartItemObj.ItemQty > 20)
             {
-                cartItemObj.ItemQty = 20;             
+                cartItemObj.ItemQty = 20;
             }
 
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
@@ -109,7 +109,7 @@ namespace Scan_For_Menu.Controllers
 
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
-            return View("ViewCart", cartItems);
+            return RedirectToAction("ViewCart");
 
         }
 
@@ -121,6 +121,6 @@ namespace Scan_For_Menu.Controllers
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
             return View("ViewCart", cartItems);
         }
-      
+
     }
 }

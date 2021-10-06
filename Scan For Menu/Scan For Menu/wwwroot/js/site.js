@@ -47,7 +47,7 @@ function scrollToTop() {
 
 function getTblNo(btn, list) {
     //get button
-   var btnOK = document.getElementById(btn);
+    var btnOK = document.getElementById(btn);
     //get value of table number
     var tblNo = document.getElementById(list).value;
 
@@ -62,7 +62,7 @@ function getTblNo(btn, list) {
 
 function snackbar() {
     // Get the snackbar DIV
-   }
+}
 
 function addToCart(item, quantity) {
 
@@ -105,8 +105,8 @@ function addToCart(item, quantity) {
 //calculate the gratuity'
 function calcTotal(subtotal, gratuityId) {
     var gratuity = parseInt(document.getElementById(gratuityId).value);
-   var total = gratuity + subtotal;
-   // alert(total);
+    var total = gratuity + subtotal;
+    // alert(total);
     var y = document.getElementById("totals").rows;
     var x = y[3].cells;
     x[1].innerHTML = "R " + total;
@@ -114,8 +114,8 @@ function calcTotal(subtotal, gratuityId) {
 }
 
 function updateCart(item, quantity) {
-    var itemId = $(item).attr("itemid");    
-    var itemQty = document.getElementById(quantity).value;   
+    var itemId = $(item).attr("itemid");
+    var itemQty = document.getElementById(quantity).value;
 
     var formdata = new FormData();
 
@@ -131,7 +131,7 @@ function updateCart(item, quantity) {
         data: formdata,
         success: function (data) {
             if (data.success) {
-               // alert("Added to cart")
+                // alert("Added to cart")
                 // $("#cartItem").text(data.Counter);
             }
         },
@@ -177,7 +177,7 @@ function updateCart(item, quantity) {
 
 
 /*
-//get table number 
+//get table number
 function setTableNo(Id) {
     tblNo = document.getElementById(Id).value;
 }
@@ -195,7 +195,7 @@ $(document).ready(function () {
     setTableNo("#table_numbers")
 
     $("#close").click(function () {
-       
+      
         $("#tableNo").modal("hide");
     });
 });

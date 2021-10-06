@@ -1,13 +1,13 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-body, html{
-width:100%;
-height:100%;
+body, html {
+    width: 100%;
+    height: 100%;
 }
 
-.logo_image{
-    opacity:0.65;
+.logo_image {
+    opacity: 0.65;
     height: 100px;
     width: 120px;
 }
@@ -58,7 +58,7 @@ height:100%;
     display: flex;
     align-items: center;
     list-style: none;
-    font-size:24px;
+    font-size: 24px;
     text-align: CENTER;
     font-style: italic;
 }
@@ -101,7 +101,7 @@ a {
     cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
-    width:20%;
+    width: 20%;
 }
 
     .tablink:hover {
@@ -117,15 +117,14 @@ a {
     text-align: center;
 }
 
-.container{
+.container {
     margin-left: 0px;
-    margin-right:0px;
-    width:100%;
-    height:100%;
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
 }
 
-.pb-3{
-
+.pb-3 {
 }
 
 #Drinks {
@@ -139,6 +138,7 @@ a {
 #Steaks {
     background-color: #d9c19f;
 }
+
 #Burgers {
     background-color: #d9c19c;
 }
@@ -149,14 +149,14 @@ a {
 
 /*add to order button and group*/
 .d-flex justify-content-between {
-    justify-content:center; 
+    justify-content: center;
     margin: auto 25% auto 25%;
 }
 
 .description {
     font-family: 'Allison', cursive;
     font-size: 60px;
-    height:80px;
+    height: 80px;
 }
 
 .tableNumber {
@@ -240,5 +240,3 @@ a {
         opacity: 0;
     }
 }
-
-

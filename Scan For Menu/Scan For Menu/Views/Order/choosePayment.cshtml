@@ -18,7 +18,7 @@
 <h4> R @ViewBag.totalAmt</h4>
 <hr class="my-4">
 
-<form method="post" asp-action="Payment">
+<form method="post" asp-action="Payment" asp-controller="Order">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div>
         <h4>Choose payment option</h4>
