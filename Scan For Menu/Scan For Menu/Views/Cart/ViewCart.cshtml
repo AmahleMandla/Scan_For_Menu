@@ -89,7 +89,7 @@
                                 Gratuity :
                             </td>
                             <td width="50%" class="text-center">
-                                <input name="GratuityAmt" oninput="calcTotal(@subTotal.ToString(), 'gratuityID')" class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="GratuityAmt" type=number value=@gratuity min=0 max=1000 />
+                                <input name="GratuityAmt" oninput="calcTotal(@subTotal.ToString(), 'GratuityAmt')" class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="GratuityAmt" type=number value=@gratuity min=0 max=10000 />
                             </td>
                         </tr>
                         <tr>
@@ -110,7 +110,7 @@
         </form>
         @{
             Context.Session.SetString("total", TotalAmount.ToString());
-            Context.Session.SetString("subtotal", subTotal.ToString());
+            Context.Session.SetString("subtotal", subTotal.ToString());  
         }
     </div>
 
@@ -148,7 +148,7 @@ else
                                     Gratuity :
                                 </td>
                                 <td width="50%" class="text-center">
-                                    <input oninput="calcTotal(@subTotal.ToString(), 'gratuityID')" class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="GratuityAmt" type=number value="@gratuity" min=0 max=100 />
+                                    <input oninput="calcTotal(@subTotal.ToString(), 'GratuityAmt')" class="gratuity" style=" border-color:#555; border-radius:15px; font-size:16px; background-color:beige; height:40px; width:80px" id="GratuityAmt" type=number value="@gratuity" min=0 max=100 />
                                 </td>
                             </tr>
                             <tr>

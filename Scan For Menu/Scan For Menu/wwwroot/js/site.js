@@ -64,9 +64,9 @@ function snackbar() {
     // Get the snackbar DIV
 }
 
-function addToCart(item, quantity) {
+function addToCart(item, quantity, snackbarID) {
 
-    var x = document.getElementById("snackbar");
+    var x = document.getElementById(snackbarID);
     // Add the "show" class to DIV
     x.className = "show";
     // After 3 seconds, remove the show class from DIV
@@ -105,12 +105,19 @@ function addToCart(item, quantity) {
 //calculate the gratuity'
 function calcTotal(subtotal, gratuityId) {
     var gratuity = parseInt(document.getElementById(gratuityId).value);
-    var total = gratuity + subtotal;
+    var total = 0;
+
+    if (gratuity >= 0) {
+        total = gratuity + subtotal;
+    }
+    else {
+        total = subtotal;
+    }
+   
     // alert(total);
     var y = document.getElementById("totals").rows;
     var x = y[3].cells;
-    x[1].innerHTML = "R " + total;
-    return gratuity;
+    x[1].innerHTML = "R " + total;    
 }
 
 function updateCart(item, quantity) {

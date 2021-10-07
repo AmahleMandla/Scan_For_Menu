@@ -168,7 +168,7 @@ a {
     font-style: italic;
 }
 
-#snackbar {
+#snackbar, #snackbar1, #snackbar2, #snackbar3, #snackbar4 {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
@@ -184,7 +184,7 @@ a {
 }
 
     /* Show the snackbar when clicking on a button (class added with JavaScript) */
-    #snackbar.show {
+    #snackbar.show, #snackbar1.show, #snackbar2.show, #snackbar3.show, #snackbar4.show {
         visibility: visible; /* Show the snackbar */
         /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
   However, delay the fade out process for 2.5 seconds */

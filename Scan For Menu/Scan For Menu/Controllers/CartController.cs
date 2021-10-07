@@ -55,7 +55,7 @@ namespace Scan_For_Menu.Controllers
                 cartItemObj.ItemQty = Quantity;
                 cartItemObj.ItemPrice = (menuItemObj.ItemPrice);
                 cartItems.Add(cartItemObj);
-            }
+            }            
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
         }
@@ -92,10 +92,12 @@ namespace Scan_For_Menu.Controllers
                 cartItemObj.ItemQty = 20;
             }
 
+            HttpContext.Session.SetInt32("GratuityAmt", 0);
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
 
-            return View("ViewCart", cartItems);
+
+            return RedirectToAction("ViewCart");
         }
 
         [Route("/Cart/removeItem/{ItemId}")]
@@ -119,7 +121,8 @@ namespace Scan_For_Menu.Controllers
 
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
-            return View("ViewCart", cartItems);
+
+            return RedirectToAction("ViewCart");
         }
 
     }
