@@ -1,25 +1,39 @@
 ﻿@{ ViewData["Title"] = "Dashboard";
-    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
-    //soumya }
+                Layout = "~/Views/Shared/_LayoutStaff.cshtml"; }
+<div class="text-center">
+    <h2 style="color:green;">     Dashboard</h2>
+    <div class="jumbotron jumbotron-fluid ">
+        <hr class="my-4">
 
-}
-<h2>Dashboard</h2>
-<div class="jumbotron"></div>
-<hr class="my-4">
-<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<div>
-    <a asp- area-""asp-controller="" asp-action="">Sign out </a>
-</div>
-<div>
-    <button name="simple_button" type="submit" value="Add new item">Add new item</button>
-</div>
-<div>
-    <button name="simple_button" type="submit" value="Edit menu item">Edit menu item</button>
-</div>
-<div>
-    <button name="simple_button" type="submit" value="View menu layout ">"View menu layout"</button>
-</div>
-<div>
-    <button name="simple_button" type="submit" value="Report">Report</button>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+        <div>
+            <button type="submit" class="btn btn-success btn-lg">Add new item</button>
+        </div>     <br>
+        <br>
+
+
+        <div>
+            <button type="submit" class="btn btn-success btn-lg">Edit menu item</button>
+        </div>     <br>
+        <br>
+
+
+        <div>
+            <button type="submit" class="btn btn-success btn-lg">View menu layout</button>
+        </div>     <br>
+        <br>
+
+
+        <div>
+            <button type="submit" class="btn btn-success btn-lg">Report</button>
+        </div>    <br>
+        <br>
+
+
+        <hr class="my-4">
+    </div>
+
 </div>

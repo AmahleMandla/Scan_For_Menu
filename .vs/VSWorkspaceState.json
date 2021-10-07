@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Scan For Menu",
+    "\\Scan For Menu\\Scan For Menu",
+    "\\Scan For Menu\\Scan For Menu\\Models"
   ],
-  "SelectedNode": "\\Scan For Menu.sln",
+  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Models\\CustomerOrder.cs",
   "PreviewInSolutionExplorer": false
 }
