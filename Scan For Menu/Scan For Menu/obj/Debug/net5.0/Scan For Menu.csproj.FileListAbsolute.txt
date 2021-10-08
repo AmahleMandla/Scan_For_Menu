@@ -1677,3 +1677,4 @@ C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For M
 C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.pdb
 C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.genruntimeconfig.cache
 C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutPayment.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutPayment.cshtml.g.cs

@@ -26,14 +26,43 @@ namespace Scan_For_Menu.Controllers     //latest
         }
 
 
-        private void writeToFile(string fileName)
+        private void writeToFile(CustomerOrder order)
         {
-            string path = Path.Combine(_hostEnvironment.WebRootPath + "\\DailyOrders\\", fileName+".txt");
             try
             {
-              
+                //CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
+                string fileName = order.OrderId.ToString();
+                 string path = Path.Combine(_hostEnvironment.WebRootPath + "\\DailyOrders\\", fileName+ ".txt");
 
-            }catch(Exception ex)
+                //Add the current date to the orders along with the order number for report perposed
+                string orderFile = Path.Combine(_hostEnvironment.WebRootPath + "\\DailyOrders\\Orders.txt");
+                
+                    using (StreamWriter sw = new StreamWriter(orderFile, true))
+                    {
+                        sw.WriteLine();
+                        sw.WriteLine(System.DateTime.Today.ToShortDateString() + "_" + order.OrderId);
+                    }
+
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    using (StreamWriter sw = new StreamWriter(fs))
+                    {
+
+                        sw.WriteLine("OrderNum_" + order.OrderId);
+                        sw.WriteLine("TableNum_" + order.TableNr);
+                        sw.WriteLine(" ");
+                        for (int i = 0; i < order.orderItems.Count; i++)
+                        {
+                            Cart item = order.orderItems[i];
+                            sw.WriteLine("Item" + i + "_" + item.ItemId + "_" + item.ItemName + "_" + item.ItemPrice + "_" + item.ItemQty);
+                        }
+                        sw.Close();
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -52,6 +81,7 @@ namespace Scan_For_Menu.Controllers     //latest
             obj.OrderState = false;
             obj.OrderPaid = false;
 
+            writeToFile(obj);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "order", obj);
             ViewBag.tableNr = obj.TableNr;
             ViewBag.totalAmt = obj.OrderTotal;

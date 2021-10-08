@@ -72,8 +72,4 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\DailyOrders\" />
-  </ItemGroup>
-
 </Project>
