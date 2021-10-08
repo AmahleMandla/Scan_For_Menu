@@ -3,8 +3,9 @@
     "",
     "\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu",
-    "\\Scan For Menu\\Scan For Menu\\Models"
+    "\\Scan For Menu\\Scan For Menu\\Views",
+    "\\Scan For Menu\\Scan For Menu\\Views\\Order"
   ],
-  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Models\\CustomerOrder.cs",
+  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Order\\choosePayment.cshtml",
   "PreviewInSolutionExplorer": false
 }
