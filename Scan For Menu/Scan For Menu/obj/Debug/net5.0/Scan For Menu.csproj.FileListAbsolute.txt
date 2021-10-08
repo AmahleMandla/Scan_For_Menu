@@ -1127,7 +1127,6 @@ C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Ra
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_IndexLayout.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_layOut_Admin.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -1492,3 +1491,12 @@ C:\Users\Lerato\Desktop\Project - WRR301\new latest\Scan For Menu\Scan For Menu\
 C:\Users\Lerato\Desktop\Project - WRR301\new latest\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutStaff.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\new latest\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Order\generateTime.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\new latest\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Order\payOnline.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\Dashboard.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\login.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Kitchen\Index.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Login\Login.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Order\generateTime.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Order\payOnline.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutStaff.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LoginLayout.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\TimeEstimate.cshtml.g.cs

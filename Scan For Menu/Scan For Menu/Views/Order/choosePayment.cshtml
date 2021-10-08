@@ -18,17 +18,17 @@
 <h4> R @ViewBag.totalAmt</h4>
 <hr class="my-4">
 
-<form method="post" asp-action="Payment" asp-controller="Order">
+<form method="post"  asp-controller="Order" asp-action="payment">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div>
         <h4>Choose payment option</h4>
-        <input asp-for="paymentType" class="form-control" type="radio" id="cashID" name="payment" value="Cash">
-        <label asp-for="paymentType" class="control-label" for="cashID">Cash </label><br>
-        <input asp-for="paymentType" class="control-label" type="radio" id="CardID" name="payment" value="Card">
-        <label asp-for="paymentType" class="control-label" for="cardID">Card </label><br />
+        <input  class="form-control" type="radio" id="cashID" name="payment" value="Cash">
+        <label  class="control-label" for="cashID">Cash </label><br>
+        <input  class="form-control" type="radio" id="CardID" name="payment" value="Card">
+        <label  class="control-label" for="cardID">Card </label><br />
     </div>
     <div>
-        <button name="simple_button" type="submit" value="Proceed">Proceed</button>
+        <input name="simple_button" type="submit" value="Proceed"/>
     </div>
 </form>
 

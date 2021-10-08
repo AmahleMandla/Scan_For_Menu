@@ -10,6 +10,7 @@ namespace Scan_For_Menu.Controllers
     {
         public IActionResult Index()
         {
+            
             return View();
         }
     }

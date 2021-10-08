@@ -13,18 +13,16 @@
         <a id="btnClick" class="btn-link" data-toggle="modal" data-target="#tableNo"> Menu</a>
     </div>
 
+
     <!--for the modal display to choose table number-->
     <div class="modal fade" id="tableNo" role="dialog">
         <div class="modal-dialog" id="dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Table Number</h4>
-                    <button class="close" id="close" type="button" data-dismiss="modal">x</button>
-                </div>
                 <form class="form" method="post" asp-controller="MenuItem" asp-action="Menu">
                     <div class="modal-body">
-                        <div class="form-group">
+                        <br /><br /><br />
                             <label asp-for="TableNr" class="head-message"></label>
+                            <br />
                             <select asp-for="TableNr" id="table_numbers" onchange="getTblNo('btnOk','table_numbers')">
                                 <option value=""></option>
                                 <option value=1> 1 </option>
@@ -36,12 +34,7 @@
                                 <option value=7> 7 </option>
                             </select>
                             <span asp-validation-for="TableNr" class="text-danger"></span>
-                        </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-
+                        <br /><br />
                         <input id="btnOk" type="submit" value="OK" class="button" />
                     </div>
                 </form>

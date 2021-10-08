@@ -42,7 +42,7 @@
     }
 
 /*modal csss*/
-#dialog {
+/*#dialog {
   
     position: absolute;
     top: 40%;
@@ -91,14 +91,62 @@
     align-content: center;
     align-items:center;
     background-color: #d9c19c;
+}*/
+
+
+
+#dialog {
+    border-radius: 20%;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    color:grey;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: grey;
+  
+}
+
+
+.modal-content {
+    border-radius: 20%;
+    background-color: grey;
+    width: inherit;
+    color:grey;
+    height: inherit;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+  
+}
+
+.modal-body {
+    border-radius: 20%;
+    background-color: beige;
+    color:grey;
+    font-size: 25px;
+    font-family: Impact;
+    border: 4px solid grey;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    text-anchor: middle;
+    vertical-align: middle;
+    line-height: initial;
 }
 
 #table_numbers {
-    width: 200px;
+    background-color:beige;
+    border-radius: 9px;
+    width: 150px;
     height: 50px;
-    text-align:center;
-    font-size:1.5rem;
-    background-color: #d9c19c;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 
@@ -117,9 +165,9 @@
     visibility: hidden;
 }
 
-    .button:hover {
-        color: antiquewhite;
-    }
+ .button:hover {
+    color: antiquewhite;
+ }
 
 
 

@@ -10,7 +10,7 @@ namespace Scan_For_Menu.Models
 {
     public class CustomerOrder
     {
-        [Key]
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OrderId { get; set; }
 
         [DisplayName("Select Table Number")]
