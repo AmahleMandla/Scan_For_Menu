@@ -149,6 +149,15 @@ function updateCart(item, quantity) {
 
 }
 
+function EnableBtn(cname, ccnum, expmonth, cvv) {
+    var btnProceed = document.getElementById('cardPayment');
+    if (cname.value != '' && ccnum.value != '' && expmonth.value != '' && cvv.value != '') {
+        btnProceed.disabled = false;
+    }
+    else {
+        btnProceed.disabled = true;
+    }
+}
 
 
 

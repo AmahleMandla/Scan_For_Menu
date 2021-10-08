@@ -22,13 +22,13 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div>
         <h4>Choose payment option</h4>
-        <input  class="form-control" type="radio" id="cashID" name="payment" value="Cash">
+        <input  class="custom-radio" type="radio" id="cashID" name="payment" value="Cash">
         <label  class="control-label" for="cashID">Cash </label><br>
-        <input  class="form-control" type="radio" id="CardID" name="payment" value="Card">
+        <input  class="custom-radio" type="radio" id="CardID" name="payment" value="Card">
         <label  class="control-label" for="cardID">Card </label><br />
     </div>
     <div>
-        <input name="simple_button" type="submit" value="Proceed"/>
+        <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" id="btnProceed" type="submit" value="Proceed" class="btnProceed" />
     </div>
 </form>
 
