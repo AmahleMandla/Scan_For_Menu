@@ -4,8 +4,9 @@
     "\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu\\Views",
-    "\\Scan For Menu\\Scan For Menu\\Views\\Order"
+    "\\Scan For Menu\\Scan For Menu\\Views\\Kitchen",
+    "\\Scan For Menu\\Scan For Menu\\Views\\Shared"
   ],
-  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Order\\choosePayment.cshtml",
+  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Shared\\_LayoutStaff.cshtml",
   "PreviewInSolutionExplorer": false
 }

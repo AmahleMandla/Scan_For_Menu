@@ -20,6 +20,5 @@ namespace Scan_For_Menu.Helpers
             return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
         }
 
- 
     }
 }

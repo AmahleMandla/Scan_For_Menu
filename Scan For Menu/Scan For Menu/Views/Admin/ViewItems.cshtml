@@ -1,12 +1,11 @@
-﻿@model dynamic   
+﻿@model IEnumerable<Scan_For_Menu.Models.MenuItem>;
 @{
     ViewData["Title"] = "ViewItems";
     Layout = "~/Views/Shared/_LayoutStaff.cshtml";
 }
 
-@{ 
-    var MenuItems = Model.MenuItem;
-    var Category = Model.FoodCategory;
+@{
+    var Category = ViewBag.foodCategories;
 }
 
 
@@ -23,7 +22,7 @@
     </div>
     <br />
     <br />
-    <form asp-controller="Admin" asp-action="filteredItems" method="post">
+    <form asp-controller="Admin" asp-action="ViewItems" method="post">
         <div class="form-group" style="justify-content:right">
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -35,7 +34,8 @@
         
             <label class="control-label">Filter by Category</label>
             <select id="categoryName" name="category">
-                <option value="All">All</option>
+                <option value="@ViewBag.filter">@ViewBag.filter</option>
+                <option value="All">Show All</option>
                 <option value="Burger">Burger</option>
                 <option value="Steaks and Grills">Steaks and Grills</option>
                 <option value="Drinks">Drinks</option>
@@ -61,13 +61,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (MenuItem obj in MenuItems)
+                @foreach (MenuItem obj in Model)
                 {
                     <tr>
                         <td width="15%">@obj.ItemName</td>
                         <td width="20%">@obj.ItemDescr</td>
                         <td width="15%"> @String.Format("R {0}", @obj.ItemPrice)</td>
                         <td width="15%"><img width=100 height=100 src="~/MenuItem/@obj.ItemImage" /></td>
+                     
                         <td width="15%">@String.Format("{0} minutes", @obj.MealPrepTime)</td>
                         @foreach (FoodCategory objf in Category)
                         {
@@ -79,8 +80,8 @@
                         }
                         <td class="text-center">
                             <div class="w-75 btn-group" role="group">
-                                <a asp-controller="Category" asp-route-Id="@obj.ItemId" style="color: #32be8f " class="mx-2 fas fa-edit">Edit</a>
-                                <a asp-controller="Category" asp-route-Id="@obj.ItemId" asp-action="Delete" class="btn btn-danger mx-2 far fa-trash-alt"></a>
+                                <a asp-controller="Admin" asp-route-Id="@obj.ItemId" asp-action="Edit" style="color: #32be8f " class="mx-2 fas fa-edit">Edit</a>
+                                <a asp-controller="Admin" asp-route-Id="@obj.ItemId" asp-action="Delete" class="btn btn-danger mx-2 far fa-trash-alt"></a>
                             </div>
                         </td>
                     </tr>
@@ -116,4 +117,5 @@
         </table>
     }
 </div>
+
 

@@ -106,12 +106,12 @@ function addToCart(item, quantity, snackbarID) {
 function calcTotal(subtotal, gratuityId) {
     var gratuity = parseInt(document.getElementById(gratuityId).value);
     var total = 0;
-
+    var subtotalNew = parseFloat(subtotal);
     if (gratuity >= 0) {
-        total = gratuity + subtotal;
+        total = gratuity + subtotalNew;
     }
     else {
-        total = subtotal;
+        total = subtotalNew;
     }
    
     // alert(total);

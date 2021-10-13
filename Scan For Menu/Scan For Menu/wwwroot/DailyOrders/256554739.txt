@@ -1,5 +1,0 @@
-OrderNum_256554739
-TableNum_0
- 
-Item0_1015_Ribs and chips_124,99_2
-Item1_1023_Island punch_25_2

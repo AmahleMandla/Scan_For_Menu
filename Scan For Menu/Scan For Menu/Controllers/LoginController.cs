@@ -28,16 +28,7 @@ namespace Scan_For_Menu.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Login(Staff staffObj)
-        {            
-            /*try
-            {
-                staffObj.StaffId = Convert.ToInt32(keys["staffId"].ToString());
-            }
-            catch
-            {
-                ModelState.AddModelError(nameof(Staff.StaffId), "Please enter valid staffID");
-            }         
-            staffObj.Password = keys["password"].ToString();*/
+        {     
 
             if (ModelState.IsValid)
             {

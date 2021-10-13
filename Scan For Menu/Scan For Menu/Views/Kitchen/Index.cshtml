@@ -1,4 +1,5 @@
-﻿@model List<KitchenOrder>;
+﻿@using Scan_For_Menu.Helpers;
+@model List<KitchenOrder>;
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_LayoutStaff.cshtml";
@@ -6,8 +7,6 @@
 
 @{ 
     var togNo = 1;
-    var CardNo = 1;
-    var collapseNo = 1;
 }
 <div class="container" style="width:inherit; max-height:inherit;">
     <br /><br /><br /><br />
@@ -20,40 +19,43 @@
         </div>
         <br /><br />
 
-        <div id="accordion">
-            @foreach (var obj in Model)
-            {
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <div class="d-flex justify-content-around">
-                            <h3>Table Number : @obj.tableNum</h3>
-                            <h3>Number Items : @obj.orders.Count</h3>
-                            <h3>Order Number : @obj.OrderNum</h3>
-                        </div>
-                        <br />
-                        <div class="d-flex justify-content-around">
-                            <button class="btn btn-success"  id="@togNo" onclick="RemoveComplete(@obj, @Model)">Remove Complete Order </button>
-                        </div>
-                    </div>
+              <div id="accordion">
+                  @{
+                      SessionHelper.SetObjectAsJSON(Context.Session, "orders", Model);
+                  }
+                  @foreach (var obj in Model)
+                  {
+                      <div class="card">
+                          <div class="card-header" id="headingOne">
+                              <div class="d-flex justify-content-around">
+                                  <h3>Table Number : @obj.tableNum</h3>
+                                  <h3>Number Items : @obj.orders.Count</h3>
+                                  <h3>Order Number : @obj.OrderNum</h3>
+                              </div>
+                              <br />
+                              <div class="d-flex justify-content-around">
+                                  <a asp-controller="Kitchen" asp-route-Id="@obj.OrderNum" asp-action="remove" class="btn btn-success">Remove Complete Order</a>
+                              </div>
+                          </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            @foreach (var obj2 in obj.orders)
-                            {
-                                <div class="d-flex justify-content-between">
-                                    <label>item ID: @obj2.ItemId  </label>
-                                    <label>item : @obj2.ItemName</label>
-                                    <label>Quantity : @obj2.ItemQty</label>
-                                    <label></label>
-                                </div>
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                              <div class="card-body">
+                                  @foreach (var obj2 in obj.orders)
+                                  {
+                                      <div class="d-flex justify-content-between">
+                                          <label>item ID: @obj2.ItemId  </label>
+                                          <label>item : @obj2.ItemName</label>
+                                          <label>Quantity : @obj2.ItemQty</label>
+                                          <label></label>
+                                      </div>
 
-                            }
-                        </div>
-                    </div>
-                </div>
-                togNo = togNo + 1;
-            }
-        </div>
+                                  }
+                              </div>
+                          </div>
+                      </div>
+                      togNo = togNo + 1;
+                  }
+              </div>
     }
     else
     {

@@ -1118,7 +1118,6 @@ C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Sc
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.RazorCoreGenerate.cache
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\Create.cshtml.g.cs
-C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewItems.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Cart\ViewCart.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
@@ -1138,11 +1137,9 @@ C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Sc
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\ref\Scan For Menu.dll
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.pdb
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.genruntimeconfig.cache
-C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\filteredItems.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\Project new\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\filteredItems.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\Project new\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewReport.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\Project new\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Cart\ChoosePayment.cshtml.g.cs
-C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewReport.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Order\choosePayment.cshtml.g.cs
 C:\Users\Lerato\Desktop\Project - WRR301\Project latest\Scan For Menu\Scan For Menu\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Lerato\Desktop\Project - WRR301\Project latest\Scan For Menu\Scan For Menu\bin\Debug\net5.0\appsettings.json
@@ -1678,3 +1675,10 @@ C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For M
 C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.genruntimeconfig.cache
 C:\Users\Lerato\Desktop\Project - WRR301\Latest Project\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutPayment.cshtml.g.cs
 C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutPayment.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\Report.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewReport.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Waiter\Index.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Waiter\Receipt.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\ViewItems.cshtml.g.cs
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Admin\Delete.cshtml.g.cs

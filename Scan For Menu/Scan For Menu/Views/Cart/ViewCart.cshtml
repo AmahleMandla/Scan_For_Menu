@@ -82,7 +82,7 @@
                             <td width="50%" class="text-center">
                                 Subtotal :
                             </td>
-                            <td width="50%" class="text-center">R @subTotal.ToString()</td>
+                            <td width="50%" class="text-center">R @subTotal.ToString("#,##0.00")</td>
                         </tr>
                         <tr>
                             <td width="50%" class="text-center">
@@ -97,7 +97,7 @@
                                 Total :
                             </td>
                             <td id="totalAmt" value="total" width="50%" class="text-center">
-                                R  @TotalAmount.ToString()
+                                R  @TotalAmount.ToString("#,##0.00")
                             </td>
                         </tr>
                     </tbody>

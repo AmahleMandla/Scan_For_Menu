@@ -10,10 +10,16 @@ namespace Scan_For_Menu.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext()
+        {
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+
 
         public DbSet<MenuItem> MenuItem { get; set; }
         public DbSet<Staff> Staff { get; set; }
@@ -21,5 +27,7 @@ namespace Scan_For_Menu.Data
         public DbSet<FoodCategory> FoodCategory { get; set; }
         public DbSet<OrderLine> OrderLine { get; set; }
         public DbSet<Cart> Cart { get; set; }
+
     }
 }
+

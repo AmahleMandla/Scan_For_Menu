@@ -1,0 +1,7 @@
+Date_2021/10/13
+ 
+Waffle_1_39,99
+Cheese cake_1_50
+Jalapeno burger_2_150
+Mexican meat soup_1_110,99
+Island punch_3_75

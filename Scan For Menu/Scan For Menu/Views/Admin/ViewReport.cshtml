@@ -1,5 +1,59 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<Scan_For_Menu.Models.ReportData>
 @{
+    ViewData["Title"] = "ViewReport";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
 }
+
+<div class="container" style="width:inherit; max-height:inherit;">
+    <br />
+    <div class="d-flex justify-content-center"><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /><h1 style="color:dimgrey">Amasole Steakhouse</h1><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /></div>
+    <br /><br />
+          <div class="d-inline-flex justify-content-between">
+              <a class="btn btn-secondary" asp-controller="Waiter" asp-action="Index">  Back to Receipts</a>
+              <a  onclick="print('snackbar2')"><i class="fas fa-print"></i></a>
+              <div id="snackbar2"> Printer successfully called</div>
+          </div>
+    <br />
+    <br />
+    @if (Model != null)
+    {
+<div class="d-flex flex-column justify-content-center" style="border: 4px solid green">
+    <div class="d-flex justify-content-center">
+        <h2>Report For: @ViewBag.Date</h2>
+    </div>
+    <br />
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <h3>
+                    ITEM NAME
+                </h3>
+                <h3>QUANTITY</h3>
+                <h3>LINE TOTAL</h3>
+            </div>
+        </div>
+        @foreach (var obj in Model)
+        {
+            <div class="card-body text-center">
+                <div class="d-flex justify-content-between">
+                    <h5> @obj.itemName </h5>
+                    <h5> @obj.itemQnty </h5>
+                    <h5>R @obj.LineTotal</h5>
+                </div>
+            </div>
+        }
+        <div class="d-inline-flex justify-content-end m-5">
+            <h3>
+                Total Number of Items ordered : @ViewBag.TotItems
+            </h3>
+
+        </div>
+        <div class="d-inline-flex justify-content-end m-5">
+            <h3>Total Revenue : R @ViewBag.TotalRevenue</h3>
+        </div>
+
+    </div>
+</div>
+     }
+</div>

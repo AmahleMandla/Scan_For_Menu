@@ -1,35 +1,42 @@
 ﻿@model Scan_For_Menu.Models.ChoosePayment
 @{
     ViewData["Title"] = "choosePayment";
-    Layout = "~/Views/Shared/_Layout.cshtml";       // soumya
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
 
 }
 
 <div>
-    <a asp-controller="Cart" asp-action="ViewCart">back</a>
+    <a asp-controller="Cart" asp-action="ViewCart">Back</a>
 
 </div>
 
 
-<h2>Payment</h2>
-<div class="jumbotron"></div>
-<h3> Total</h3>
-<h4> R @ViewBag.totalAmt</h4>
+<h2 style="color: black;"> Payment</h2>
 <hr class="my-4">
+<!--<div class="jumbotron"></div> -->
 
-<form method="post"  asp-controller="Order" asp-action="payment">
+<h3 style="color: black;"> Total amount</h3>
+<h4> R @ViewBag.totalAmt</h4>
+
+<div>
+    
+    <img src="~/Images/cash-credit.jpg" />"/>
+</div>
+
+<form method="post" asp-controller="Order" asp-action="payment">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div>
         <h4>Choose payment option</h4>
-        <input  class="custom-radio" type="radio" id="cashID" name="payment" value="Cash">
-        <label  class="control-label" for="cashID">Cash </label><br>
-        <input  class="custom-radio" type="radio" id="CardID" name="payment" value="Card">
-        <label  class="control-label" for="cardID">Card </label><br />
+        <input class="custom-radio" type="radio" id="cashID" name="payment" value="Cash">
+        <label class="control-label" for="cashID">Cash </label><br>
+        <input class="custom-radio" type="radio" id="CardID" name="payment" value="Card">
+        <label class="control-label" for="cardID">Card </label><br />
     </div>
     <div>
         <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" id="btnProceed" type="submit" value="Proceed" class="btnProceed" />
     </div>
 </form>
+<hr class="my-4">
 
 

@@ -39,7 +39,6 @@ namespace Scan_For_Menu.Controllers     //latest
                 
                     using (StreamWriter sw = new StreamWriter(orderFile, true))
                     {
-                        sw.WriteLine();
                         sw.WriteLine(System.DateTime.Today.ToShortDateString() + "_" + order.OrderId);
                     }
 
@@ -77,7 +76,7 @@ namespace Scan_For_Menu.Controllers     //latest
             obj.orderItems = SessionHelper.GetObjectFromJSON<List<Cart>>(HttpContext.Session, "cartItems");
             obj.OrderTotal = (decimal)(Convert.ToDouble(HttpContext.Session.GetString("total")) + (double)obj.GratuityAmt);
             obj.OrderId = (int)HttpContext.Session.GetInt32("orderNum");
-            obj.OrderDate = System.DateTime.Today;
+            obj.OrderDate = DateTime.Parse(System.DateTime.Today.ToShortDateString());
             obj.OrderState = false;
             obj.OrderPaid = false;
 
@@ -100,11 +99,50 @@ namespace Scan_For_Menu.Controllers     //latest
             // if credit/debit chosen return payOnline
             if ( payment == "Card")
             {
-
                 return RedirectToAction(nameof(payOnline)); // return payOnline
             }
             else
+            {
+                generateBill();
                 return RedirectToAction(nameof(generateTime)); // , generate meal prep
+            }
+               
+        }
+
+        private void generateBill()
+        {
+            CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
+            string fileName = order.TableNr.ToString();
+            string path = Path.Combine(_hostEnvironment.WebRootPath + "\\Receipts\\", fileName + ".txt");
+
+            try
+            {
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    using (StreamWriter sw = new StreamWriter(fs))
+                    {
+
+                        sw.WriteLine("OrderNum_" + order.OrderId);
+                        sw.WriteLine("Date_" + System.DateTime.Today.ToShortDateString());
+                        sw.WriteLine(" ");
+                        sw.WriteLine("SubTotal" + "_" + (HttpContext.Session.GetString("total")));
+                        sw.WriteLine("Gratuity" + "_" + order.GratuityAmt);
+                        sw.WriteLine("Total" + "_" + order.OrderTotal);
+                        for (int i = 0; i < order.orderItems.Count; i++)
+                        {
+                            Cart item = order.orderItems[i];
+                            sw.WriteLine("Item" + i + "_" + item.ItemName + "_" + item.ItemQty + "_" + item.ItemPrice);
+                        }
+                        sw.Close();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
         }
 
         public ActionResult payOnline()
@@ -125,10 +163,52 @@ namespace Scan_For_Menu.Controllers     //latest
 
         public ActionResult generateTime()
         {
-            //do code to generate
+            //do code to generate meal prep time estimate
             CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
+            
+                  int orderTime = 0;
 
+            foreach (Cart item in order.orderItems)
+            {
+                MenuItem item1 = amasole_db.MenuItem.Find(item.ItemId);
+
+                if (item1.MealPrepTime >= orderTime)
+                {
+                    // make that the time estimate
+                    orderTime = item1.MealPrepTime;
+                }
+
+            }
+
+
+            ViewBag.Time = orderTime;
+            AddToDb();
             return View();
+        }
+
+        public  void AddToDb()
+        {
+            CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
+            OrderLine orderItem = new OrderLine();
+            List <OrderLine> orderLineItems= new List<OrderLine>();
+            orderItem.OrderId = order.OrderId;
+            
+            ///    for (int i = 0; i < order.orderItems.Count; i++)
+            foreach (var cart in order.orderItems)
+            {
+                //orderItem.OrderLineId = random.Next(1000, int.MaxValue);
+                orderItem.ItemId = cart.ItemId;
+                orderItem.Quantity = cart.ItemQty;
+                orderItem.OrderLineTotal = (decimal)(cart.ItemPrice * cart.ItemQty);
+                orderLineItems.Add(orderItem);
+
+                //amasole_db.OrderLine.Add(orderItem);
+            }
+            amasole_db.OrderLine.AddRange(orderLineItems);
+            amasole_db.CustomerOrder.Add(order);
+
+            amasole_db.SaveChanges();
+
         }
     }
 }

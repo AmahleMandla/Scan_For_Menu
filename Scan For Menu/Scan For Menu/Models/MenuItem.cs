@@ -43,7 +43,7 @@ namespace Scan_For_Menu.Models
         public string ItemImage { get; set; }
 
         [DisplayName("Price")]
-        [Required]
+        [Required(ErrorMessage ="Price Must be in Rands")]
         [DataType(DataType.Currency)]
         public float ItemPrice { get; set; }
 

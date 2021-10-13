@@ -1,0 +1,9 @@
+OrderNum_1042555412
+Date_2021/10/13
+ 
+SubTotal_451,94
+Gratuity_25,0
+Total_476,94
+Item0_Cosmopolitan_4_45,5
+Item1_Sauvignon wine_3_49,99
+Item2_Waffle_3_39,99

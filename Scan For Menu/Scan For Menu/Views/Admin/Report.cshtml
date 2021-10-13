@@ -1,0 +1,30 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Report";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+
+<div class="container" style="width:inherit; max-height:inherit;">
+    <br />
+    <div class="d-flex justify-content-center"><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /><h1 style="color:dimgrey">Amasole Steakhouse</h1><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /></div>
+    <br /><br />
+    <div class="d-inline-flex justify-content-start" >
+        <a class="btn btn-secondary" asp-controller="Admin" asp-action="Dashboard">  Back to Dashboard</a>
+    </div>
+    <br />
+    <br />
+    @if (Model != null)
+    {
+        @foreach (var obj in Model) {
+            <div class="card d-flex justify-content-center">
+                <div class="card-body text-center">
+                    <h3>Report Date : @obj</h3>
+                </div>
+                <div class="d-inline-flex justify-content-end m-2">
+                    <a class="btn btn-outline-info" asp-controller="Admin" asp-route-date=@obj asp-action="ViewReport">View Report</a>
+                </div>
+            </div>
+          }
+    }
+</div>
+

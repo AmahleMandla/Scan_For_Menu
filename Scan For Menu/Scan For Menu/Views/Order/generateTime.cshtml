@@ -1,5 +1,24 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Scan_For_Menu.Models.MenuItem
+@{ ViewData["Title"] = "generateTime";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h4>  @ViewBag.totalAmt</h4>
+
+<h4 style="color:green;">Estimate Time</h4>
+
+<!--<div class="jumbotron"></div> -->
+<hr class="my-4">
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<h4 style="color:green;">The kitchen is busy with your order :)</h4>
+<br />
+<h6>  You're estimated time is :  </h6>
+<h5> @ViewBag.time mins </h5>
+
+
+<div>
+    
+    <img src="~/Images/time.jpg" />" />
+</div> 
+
+
+<hr class="my-4">

@@ -1,0 +1,8 @@
+OrderNum_1377239648
+Date_2021/10/13
+
+SubTotal_49,989998
+Gratuity_0,0
+Total_49,989998
+Item0_Island punch_1_25
+Item1_Bombay smash_1_24,99

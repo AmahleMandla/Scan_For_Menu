@@ -1,0 +1,8 @@
+OrderNum_130651274
+Date_2021/10/13
+ 
+SubTotal_368
+Gratuity_0,0
+Total_368,0
+Item0_Classic Eggplant Parmesan soup_2_109
+Item1_Jalapeno burger_2_75

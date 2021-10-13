@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Latest Project\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {}
+    "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Latest Project\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {
+    "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Latest Project\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
+        "projectUniqueName": "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
         "projectName": "Scan For Menu",
-        "projectPath": "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Latest Project\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
-        "packagesPath": "C:\\Users\\Lerato\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lerato\\Desktop\\Project - WRR301\\Latest Project\\Scan For Menu\\Scan For Menu\\obj\\",
+        "projectPath": "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\Scan For Menu.csproj",
+        "packagesPath": "C:\\Users\\Amahle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amahle\\Desktop\\3rd year\\Scan For Menu\\Scan For Menu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lerato\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amahle\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

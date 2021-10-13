@@ -13,6 +13,7 @@
     </div>
     <div class="login-content">
         <form method="post" asp-controller="Login" asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <img src="~/Images/avatar.svg">
             <h2 class="title">Welcome</h2>
             <div class="input-div one">
@@ -22,6 +23,7 @@
                 <div class="div">
                     <h5>Staff ID</h5>
                     <input asp-for="StaffId" id="staffId" name="staffId" type="text" class="input">
+                    <span asp-validation-for="StaffId"></span>
                 </div>
             </div>
             <div class="input-div pass">
@@ -30,10 +32,20 @@
                 </div>
                 <div class="div">
                     <h5>Password</h5>
+
                     <input asp-for="Password" id="password" name="password" type="password" class="input">
+                    <br /><br />
+
+                    <span asp-validation-for="Password"></span>
                 </div>
+
             </div>
-            <input type="submit" class="btn" value="Login" asp-action="Login" asp-controller="Login">
+            <div class="d-inline-flex justify-content-end">
+                <label>Show Password</label>
+                <!-- An element to toggle between password visibility -->
+                <input type="checkbox" onclick="checkPassword()" />
+            </div>
+            <input type="submit" class="btn" value="Login" asp-controller="Login" asp-action="Login">
         </form>
     </div>
 </div>

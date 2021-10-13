@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Scan_For_Menu.Data;
+using Scan_For_Menu.Helpers;
 using Scan_For_Menu.Models;
 using System;
 using System.Collections.Generic;
@@ -63,11 +64,22 @@ namespace Scan_For_Menu.Controllers
             return View(orders);
         }
 
-        [HttpPost]
-        public ActionResult remove(KitchenOrder orderToRemove, List<KitchenOrder> orders)
+       
+        public IActionResult remove(int? Id)
         {
+            if ((Id == null) || (Id == 0))
+            {
+                return NotFound();
+            }
 
-            return View("Index", orders);
+            String path = Path.Combine(_hostEnvironment.WebRootPath + "\\DailyOrders\\" + Id + ".txt");
+
+            FileInfo file = new FileInfo(path);
+            if (file.Exists)
+            {
+                file.Delete();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

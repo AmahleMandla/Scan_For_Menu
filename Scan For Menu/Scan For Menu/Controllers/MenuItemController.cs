@@ -48,19 +48,6 @@ namespace Scan_For_Menu.Controllers
             return View(mymodel);
         }
 
-
-
-
-   
-        /*
-      [HttpPost]
-      [ValidateAntiForgeryToken]
-        public IActionResult Table(CustomerOrder obj)
-        {
-            mymodel.CustomerOrder = obj; 
-            return Menu();
-        }
-        */
     }
 }
 

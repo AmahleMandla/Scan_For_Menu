@@ -72,4 +72,9 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Receipts\" />
+    <Folder Include="wwwroot\Reports\" />
+  </ItemGroup>
+
 </Project>
