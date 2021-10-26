@@ -1,12 +1,13 @@
 ﻿@model Scan_For_Menu.Models.MenuItem
 @{ ViewData["Title"] = "generateTime";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
-<h4>  @ViewBag.totalAmt</h4>
+   Layout = "~/Views/Shared/_LayoutPayment.cshtml";
+}
+<!--<h4>  @ViewBag.totalAmt</h4>
 
-<h4 style="color:green;">Estimate Time</h4>
+<h4 style="color:green;">Estimate Time</h4>-->
 
 <!--<div class="jumbotron"></div> -->
-<hr class="my-4">
+<!--<hr class="my-4">
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <h4 style="color:green;">The kitchen is busy with your order :)</h4>
@@ -21,4 +22,24 @@
 </div> 
 
 
-<hr class="my-4">
+<hr class="my-4">-->
+<section>
+    <div>
+        <h1 style="font-family: 'Comic Sans MS' cursive; font-style: oblique;  " > The kitchen is working on it &#128512;</h1>
+    </div>
+</section>
+<section>
+    <div class="container1">
+        <a id="icon" class="burger">
+            <span class="hamburger bun top"></span>
+            <span class="hamburger chez"></span>
+            <span class="hamburger meet"></span>
+            <span class="hamburger lettus"></span>
+            <span class="hamburger bun bottom"></span>
+        </a>
+    </div>
+    <div style="font-size:x-large"> @ViewBag.time mins </div>
+</section>
+<section>
+
+</section>

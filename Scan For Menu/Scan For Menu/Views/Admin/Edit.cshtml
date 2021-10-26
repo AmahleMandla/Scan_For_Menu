@@ -5,7 +5,7 @@
 @{ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_LayoutStaff.cshtml"; }
 
-<div class="container">
+<div class="d-flex flex-column justify-content-center" style="margin-left:40%">
     <h1>Edit Item</h1>
     <h4>@Model.ItemName</h4>
     <hr />
@@ -21,7 +21,6 @@
                 <div class="form-group">
                     <div class="d-xl-inline-flex justify-content-around">
                          <img width=250 height=250 style="border:6px solid yellowgreen; border-radius:10%" img src="~/MenuItem/@Model.ItemImage" />
-
                         <div>
                             <label asp-for="Image" class="control-label"></label>
                             <input asp-for="Image" type="file" name="Image" accept="image/jpeg" />

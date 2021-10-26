@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html style="height:100%;">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/css/payment.css" rel="stylesheet" type="text/css" />
@@ -16,34 +17,32 @@
     <script scr="~/lib/jquery/dist/js/bootstrap.min.js"></script>
     @*<link href="~/css/site.css" rel="stylesheet" type="text/css" />*@
 </head>
-<body>
+<body style="height:100%">
     <header>
         <div>
             <nav class="navbar">
                 <div class="navbar_container">
-                    <ul>
-                        <li>
-                            <div class="logo_container">
-                                <a class="logo" asp-area="" asp-controller="MenuItem" asp-action="Menu">
-                                    <img class="logo_image" src="~/Images/logo.jpeg" />Amasole Steakhouse
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="logo_container">
+                        <a class="logo" asp-area="" asp-controller="MenuItem" asp-action="Menu">
+                            <img class="logo_image" src="~/Images/logo.jpeg" />Amasole Steakhouse
+                        </a>
+
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
-    <div>
+    <div style="height:100%">
         <main role="main" class="pb-3" style="justify-content:center; align-items:center; align-content:center; text-align:center">
             @RenderBody()
         </main>
     </div>
 </body>
-
+</html>
 <footer class="border-top footer text-muted">
     <div class="container">
         &copy; 2021 - Scan_For_Menu - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
 </footer>
-</html>
+
+}

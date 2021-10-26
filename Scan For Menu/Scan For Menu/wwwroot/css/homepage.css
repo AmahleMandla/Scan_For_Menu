@@ -96,7 +96,7 @@
 
 
 #dialog {
-    border-radius: 20%;
+   
     position: absolute;
     top: 30%;
     left: 15%;
@@ -113,7 +113,7 @@
 
 
 .modal-content {
-    border-radius: 20%;
+   
     background-color: grey;
     width: inherit;
     color:grey;
@@ -126,9 +126,8 @@
 }
 
 .modal-body {
-    border-radius: 20%;
-    background-color: beige;
-    color:grey;
+    background-color: #DBD095;
+    color: grey;
     font-size: 25px;
     font-family: Impact;
     border: 4px solid grey;
@@ -141,7 +140,7 @@
 }
 
 #table_numbers {
-    background-color:beige;
+    background-color: #DBD095;
     border-radius: 9px;
     width: 150px;
     height: 50px;
@@ -152,7 +151,7 @@
 
 .button {
     background-color: grey;
-    color: antiquewhite;
+    color: #DBD095;
     text-decoration: none;
     text-align: center;
     padding: 20px 40px 20px 40px;

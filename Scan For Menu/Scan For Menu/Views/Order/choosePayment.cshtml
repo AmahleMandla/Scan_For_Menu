@@ -1,42 +1,55 @@
 ﻿@model Scan_For_Menu.Models.ChoosePayment
 @{
     ViewData["Title"] = "choosePayment";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPayment.cshtml";
 
 
 }
-
-<div>
-    <a asp-controller="Cart" asp-action="ViewCart">Back</a>
-
-</div>
-
-
-<h2 style="color: black;"> Payment</h2>
-<hr class="my-4">
-<!--<div class="jumbotron"></div> -->
-
-<h3 style="color: black;"> Total amount</h3>
-<h4> R @ViewBag.totalAmt</h4>
-
-<div>
-    
-    <img src="~/Images/cash-credit.jpg" />"/>
-</div>
-
-<form method="post" asp-controller="Order" asp-action="payment">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div>
-        <h4>Choose payment option</h4>
-        <input class="custom-radio" type="radio" id="cashID" name="payment" value="Cash">
-        <label class="control-label" for="cashID">Cash </label><br>
-        <input class="custom-radio" type="radio" id="CardID" name="payment" value="Card">
-        <label class="control-label" for="cardID">Card </label><br />
+<section>
+    <div class="d-flex justify-content-start m-5">
+        <a class="btn btn-secondary" asp-controller="Cart" asp-action="ViewCart">Back to cart</a>
     </div>
-    <div>
-        <input style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" id="btnProceed" type="submit" value="Proceed" class="btnProceed" />
+</section>
+<section style="height:100%">
+    <br /><br />
+    <div class="d-flex justify-content-around" style="font-family:'Times New Roman', Times, serif;">
+        <h3 style="color: black;"> Total amount due: </h3>
+        <h4> R @ViewBag.totalAmt</h4>
     </div>
-</form>
-<hr class="my-4">
+    <br />
+    <div class="container">
 
+        <div class="row mbr-justify-content-center">
 
+            <a asp-controller="Order" asp-action="payOnline" style="text-decoration:none">
+                <div class="col-lg-6 mbr-col-md-10">
+                    <div class="wrap">
+                        <div class="ico-wrap">
+                            <span class="fa fa-credit-card "></span>
+                        </div>
+                        <div class="text-wrap vcenter">
+                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"> Add <span>Credit card</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a asp-controller="Order" asp-action="generateTime" style="text-decoration:none; text-decoration-color: inherit">
+                <div class="col-lg-6 mbr-col-md-10" role="button">
+                    <div class="wrap">
+                        <div class="ico-wrap">
+                            <span class="fa"></span>
+                        </div>
+                        <div class="text-wrap vcenter">
+                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"> Pay <span> cash</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<section></section>

@@ -1,7 +1,11 @@
 Date_2021/10/13
  
-Waffle_1_39,99
-Cheese cake_1_50
-Jalapeno burger_2_150
+Waffle_4_159,96
+Cheese cake_2_100
+Jalapeno burger_3_225
 Mexican meat soup_1_110,99
-Island punch_3_75
+Island punch_4_100
+Chocolate and strawberry cake_4_220
+Pumkin steak_2_240
+Bombay smash_1_24,99
+Cheesy beef burger_4_280

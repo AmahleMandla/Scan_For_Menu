@@ -1,9 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @model Scan_For_Menu.Models.ChoosePayment;
 @{ ViewData["Title"] = "payOnline";
-                Layout = "~/Views/Shared/_LayoutPayment.cshtml";
-                var total = Context.Session.GetString("TotalAmt"); }
-
+    Layout = "~/Views/Shared/_LayoutPayment.cshtml";
+    var total = Context.Session.GetString("TotalAmt"); }
+<section></section>
+<section>
 <div class="row">
     <div class="col-75">
         <div class="container" style="justify-content: center; align-content: center">
@@ -64,3 +65,5 @@
         </div>
     </div>
 </div>
+</section>
+<section></section>

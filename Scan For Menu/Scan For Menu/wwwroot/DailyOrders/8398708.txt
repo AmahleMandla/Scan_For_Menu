@@ -1,0 +1,7 @@
+OrderNum_8398708
+TableNum_0
+ 
+Item0_1038_Classic Eggplant Parmesan soup_109_1
+Item1_1013_Juicy lobster_100_1
+Item2_1_Jalapeno burger_75_1
+Item3_11_Chocolate and strawberry cake_55_1
