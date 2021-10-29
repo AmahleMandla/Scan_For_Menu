@@ -1,11 +1,11 @@
 Date_2021/10/13
  
-Waffle_4_159,96
-Cheese cake_2_100
-Jalapeno burger_3_225
-Mexican meat soup_1_110,99
-Island punch_4_100
-Chocolate and strawberry cake_4_220
-Pumkin steak_2_240
-Bombay smash_1_24,99
-Cheesy beef burger_4_280
+Deserts_Waffle_4_159,96
+Deserts_Cheese cake_2_100
+Burgers_Jalapeno burger_3_225
+Soup, Salad and Sides_Mexican meat soup_1_110,99
+Drinks_Island punch_4_100
+Deserts_Chocolate and strawberry cake_4_220
+Steaks and Grills_Pumkin steak_2_240
+Drinks_Bombay smash_1_24,99
+Burgers_Cheesy beef burger_4_280

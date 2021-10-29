@@ -37,7 +37,7 @@ body, html {
 
 
 .navbar {
-    background: #d9c19c;
+    background: #808080; 
     height: 200px;
     z-index: 999;
     position: relative;
@@ -104,9 +104,9 @@ a {
     width: 20%;
 }
 
-    .tablink:hover {
-        background-color: #777;
-    }
+.tablink:hover {
+    background-color: #777;
+}
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
@@ -128,23 +128,23 @@ a {
 }
 
 #Drinks {
-    background-color: #d9c19d;
+    background-color: #808080;
 }
 
 #Soups {
-    background-color: #d9c19e;
+    background-color: #808080;
 }
 
 #Steaks {
-    background-color: #d9c19f;
+    background-color: #808080;
 }
 
 #Burgers {
-  
+    background-color: #808080;
 }
 
 #Deserts {
-    background-color: #d9c19b;
+    background-color: #808080;
 }
 
 /*add to order button and group*/

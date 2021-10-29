@@ -1,7 +1,13 @@
-﻿@model List<Scan_For_Menu.Models.ReportData>
+﻿
 @{
     ViewData["Title"] = "ViewReport";
     Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+
+    var drinks = ViewBag.drinks;
+    var deserts = @ViewBag.deserts;
+    var burgers = @ViewBag.burgers;
+    var salads = @ViewBag.salads;
+    var steaks = @ViewBag.steaks; 
 }
 
 <div class="container" style="width:inherit; max-height:inherit;">
@@ -15,45 +21,163 @@
           </div>
     <br />
     <br />
-    @if (Model != null)
-    {
-<div class="d-flex flex-column justify-content-center" style="border: 4px solid green">
-    <div class="d-flex justify-content-center">
-        <h2>Report For: @ViewBag.Date</h2>
-    </div>
-    <br />
-    <br />
-    <div class="card">
-        <div class="card-header">
-            <div class="d-flex justify-content-between">
-                <h3>
-                    ITEM NAME
-                </h3>
-                <h3>QUANTITY</h3>
-                <h3>LINE TOTAL</h3>
-            </div>
+  
+    <div class="d-flex flex-column justify-content-center" style="border: 4px solid green">
+
+        <div class="d-flex" ><h4>Amasole SteakHouse</h4></div>
+        <div class="d-flex">
+            <h5>Date: @ViewBag.Date</h5>
         </div>
-        @foreach (var obj in Model)
-        {
-            <div class="card-body text-center">
+        <br />
+        <br />
+        <div class="card">
+            <div class="card-header">
                 <div class="d-flex justify-content-between">
-                    <h5> @obj.itemName </h5>
-                    <h5> @obj.itemQnty </h5>
-                    <h5>R @obj.LineTotal</h5>
+
+
+
                 </div>
             </div>
-        }
-        <div class="d-inline-flex justify-content-end m-5">
-            <h3>
-                Total Number of Items ordered : @ViewBag.TotItems
-            </h3>
+            <table class="table table-bordered table-striped justify-content-center" style="width:100%; text-align:center; align-content:center ">
+                <thead style="background-color:#808080; color:white">
+                    <tr>
+                        <th width="25%">
+                            <h4>
+                                CATEGORY
+                            </h4>
+                        </th>
+                        <th width="25%">
+                            <h4>
+                                ITEM NAME
+                            </h4>
+                        </th>
+                        <th width="25%"><h4>QUANTITY</h4></th>
+                        <th width="25%"> <h4>LINE TOTAL</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (ViewBag.drinks.Count > 0)
+                    {
+                        <tr style="background-color: darkgrey; color:white">
+                            <td><h5>Drinks</h5></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        @foreach (var obj in drinks)
+                        {
+                            <tr>
+                                <td width="25%"> </td>
+                                <td width="25%"> @obj.itemName</td>
+                                <td width="25%">@obj.itemQnty</td>
+                                <td width="25%">R @obj.LineTotal </td>
+                            </tr>
+                        }
+                    }
+
+                    @if (ViewBag.deserts.Count > 0)
+                    {
+                        <tr></tr>
+                        <tr style="background-color: darkgrey; color:white">
+                            <td><h5>Deserts</h5></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        @foreach (var obj in deserts)
+                        {
+                            <tr>
+                                <td width="25%"> </td>
+                                <td width="25%"> @obj.itemName</td>
+                                <td width="25%">@obj.itemQnty</td>
+                                <td width="25%">R @obj.LineTotal </td>
+                            </tr>
+                        }
+
+                    }
+
+                    @if (ViewBag.burgers.Count > 0)
+                    {
+                        <tr></tr>
+                        <tr style="background-color: darkgrey; color:white">
+
+                            <td><h5>Burgers</h5></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        @foreach (var obj in burgers)
+                        {
+                            <tr>
+                                <td width="25%"> </td>
+                                <td width="25%"> @obj.itemName</td>
+                                <td width="25%">@obj.itemQnty</td>
+                                <td width="25%">R @obj.LineTotal </td>
+                            </tr>
+                        }
+
+                    }
+
+
+
+
+                    @if (ViewBag.steaks.Count > 0)
+                    {
+                        <tr></tr>
+                        <tr style="background-color: darkgrey; color:white">
+
+                            <td><h5>Steaks & Grills</h5></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        @foreach (var obj in steaks)
+                        {
+                            <tr>
+                                <td width="25%"> </td>
+                                <td width="25%"> @obj.itemName</td>
+                                <td width="25%">@obj.itemQnty</td>
+                                <td width="25%">R @obj.LineTotal </td>
+                            </tr>
+                        }
+
+                    }
+
+
+                    @if (ViewBag.salads.Count > 0)
+                    {
+                        <tr></tr>
+                        <tr style="background-color: darkgrey; color:white">
+
+                            <td><h5>Soups, salads & Sides</h5></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        @foreach (var obj in salads)
+                        {
+                            <tr>
+                                <td width="25%"> </td>
+                                <td width="25%"> @obj.itemName</td>
+                                <td width="25%">@obj.itemQnty</td>
+                                <td width="25%">R @obj.LineTotal </td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+            </table>
+
+
+            <div class="d-flex justify-content-end">
+                <h5>Total Revenue : R @ViewBag.TotalRevenue</h5>
+            </div>
+            <div class="d-flex justify-content-end">
+                <h5>  Total Number of Items ordered : @ViewBag.TotItems</h5>
+            </div>
 
         </div>
-        <div class="d-inline-flex justify-content-end m-5">
-            <h3>Total Revenue : R @ViewBag.TotalRevenue</h3>
-        </div>
-
-    </div>
-</div>
-     }
+    </div>     
 </div>

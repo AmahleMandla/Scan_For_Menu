@@ -53,7 +53,7 @@
         {
             @if (@obj.CategoryId == drink)
             {
-                <div class="card mb-1 justify-content-between" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
+                <div class="card mb-1 justify-content-between" style="display: flex; background-color: #f5e8d3; justify-content: center; border-radius:10px; align-content: center; text-align: center;">
                     <div class="d-inline-flex justify-content-around">
                         <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
                         <div class="card-body">
@@ -216,7 +216,7 @@
                                 <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
                             </div>
                             <!--Soumya use this button to get the number of items-->
-                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar')">Add</button>
+                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar3')">Add</button>
                             <div id="snackbar3"> Added to cart</div>
                         </div>
                     </div>
@@ -266,7 +266,7 @@
                             </div>
                             <!--Soumya use this button to get the number of items-->
                             <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar')">Add</button>
-                            <div id="snackbar2"> Added to cart</div>
+                            <div id="snackbar4"> Added to cart</div>
                         </div>
                     </div>
                 </div>

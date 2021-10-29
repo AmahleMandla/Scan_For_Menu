@@ -47,13 +47,15 @@ namespace Scan_For_Menu.Controllers
                 cartItemObj = cartItems.Single(model => model.ItemId == ItemId);
                 cartItemObj.ItemQty += Quantity;
                 cartItemObj.ItemPrice = menuItemObj.ItemPrice;
+                cartItemObj.Category = menuItemObj.CategoryName;
             }
             else
             {
                 cartItemObj.ItemId = ItemId;
                 cartItemObj.ItemName = menuItemObj.ItemName;
                 cartItemObj.ItemQty = Quantity;
-                cartItemObj.ItemPrice = (menuItemObj.ItemPrice);
+                cartItemObj.ItemPrice = menuItemObj.ItemPrice;
+                cartItemObj.Category = menuItemObj.CategoryName;
                 cartItems.Add(cartItemObj);
             }            
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);

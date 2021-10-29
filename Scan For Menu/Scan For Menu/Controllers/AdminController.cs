@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Scan_For_Menu.Data;
@@ -52,9 +52,10 @@ namespace Scan_For_Menu.Controllers
                 {
                     data = new ReportData();
                     string[] reportdata = sr.ReadLine().Split('_');
-                    data.itemName = reportdata[0];
-                    data.itemQnty = int.Parse( reportdata[1]);
-                    data.LineTotal = double.Parse(reportdata[2]);
+                    data.Category = reportdata[0];
+                    data.itemName = reportdata[1];
+                    data.itemQnty = int.Parse( reportdata[2]);
+                    data.LineTotal = double.Parse(reportdata[3]);
                    
                     reportdataItems.Add(data);
                 }
@@ -76,6 +77,12 @@ namespace Scan_For_Menu.Controllers
             Dictionary<string, List<ReportData>> keyValues = SessionHelper.GetObjectFromJSON<Dictionary<string, List<ReportData>>>(HttpContext.Session, "Reports");
             List<ReportData> todayReport = keyValues[date];
 
+            List<ReportData> drinkData = new List<ReportData>();
+            List<ReportData> burgerData = new List<ReportData>();
+            List<ReportData> saladData = new List<ReportData>();
+            List<ReportData> desertData = new List<ReportData>();
+            List<ReportData> steakData = new List<ReportData>();
+
             ViewBag.TotalRevenue = 0;
             ViewBag.TotItems = 0;
 
@@ -83,9 +90,36 @@ namespace Scan_For_Menu.Controllers
             {
                 ViewBag.TotalRevenue += data.LineTotal;
                 ViewBag.TotItems += data.itemQnty;
+
+                if (data.Category == "Drinks")
+                {
+                    drinkData.Add(data);
+                }
+                else if(data.Category == "Burgers")
+                {
+                    burgerData.Add(data);
+                }
+                else if(data.Category == "Soup, Salad and Sides")
+                {
+                    saladData.Add(data);
+                }
+                else if(data.Category== "Steaks and Grills")
+                {
+                    steakData.Add(data);
+                }
+                else
+                {
+                    desertData.Add(data);
+                }
             }
 
-            return View(todayReport);
+            ViewBag.drinks = drinkData;
+            ViewBag.burgers = burgerData;
+            ViewBag.deserts = desertData;
+            ViewBag.salads = saladData;
+            ViewBag.steaks = steakData;
+
+            return View();
         }
 
         public IActionResult ViewItems()
@@ -322,13 +356,15 @@ namespace Scan_For_Menu.Controllers
                     foreach (OrderLine line in lines)
                     {
                         MenuItem item = _dbContext.MenuItem.Find(line.ItemId);
-                         
+                         string catName = _dbContext.FoodCategory.Find(item.CategoryId).CategoryName;
                         if (!reportData.ContainsKey(item.ItemId))
                         {
+
                             itemIds.Add(item.ItemId);
                             ReportData data = new ReportData();
                             data.itemName = item.ItemName;
                             data.itemQnty = line.Quantity;
+                            data.Category = catName;
                             data.LineTotal = (double)line.OrderLineTotal;
                             reportData.Add(item.ItemId, data);
                         }
@@ -336,9 +372,9 @@ namespace Scan_For_Menu.Controllers
                         {
                             ReportData data = reportData.GetValueOrDefault(item.ItemId);
                             data.itemQnty += line.Quantity;
+                            data.Category = catName;
                             data.LineTotal += (double)line.OrderLineTotal;
                             reportData[item.ItemId] = data;
-
                         }
                     }
                 }
@@ -367,7 +403,7 @@ namespace Scan_For_Menu.Controllers
                         foreach (var id in items) {
 
                             ReportData data = reports.GetValueOrDefault(id);
-                            sw.WriteLine(data.itemName+ "_"+ data.itemQnty+"_"+data.LineTotal);
+                            sw.WriteLine(data.Category +"_"+ data.itemName+ "_"+ data.itemQnty+"_"+data.LineTotal);
                         }
                         sw.Close();
                     }

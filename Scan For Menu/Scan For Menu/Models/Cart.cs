@@ -18,6 +18,8 @@ namespace Scan_For_Menu.Models
         public string ItemName { get; set; }
         public int ItemQty { get; set; }
         public float ItemPrice { get; set; }
-        //public float CartTotal { get; set; }
+
+        [NotMapped]
+        public string Category { get; set; }
     }
 }
