@@ -2,10 +2,11 @@
     background-color: #e0ddce;
     justify-content: center;
     align-content: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
-
+    width: 100%;
 }
 
 .btnConfirm {
@@ -17,15 +18,16 @@
     border: none;
     background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
     font-size: 1rem;
-    background-size: 200%;   
-    height: 30px;
+    background-size: 200%;
+    height: 40px;
+    width: 400px;
 }
 
 .mx-2 fas fa-edit {
     background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
 }
 
-#snackbar1, #snackbar2{
+#snackbar1, #snackbar2 {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
@@ -40,14 +42,23 @@
     bottom: 30px; /* 30px from the bottom */
 }
 
-    /* Show the snackbar when clicking on a button (class added with JavaScript) */
-    #snackbar1.show, #snackbar2.show {
-        visibility: visible; /* Show the snackbar */
-        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+.row {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+.col-md-4 {
+    width: 100%;
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar1.show, #snackbar2.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
   However, delay the fade out process for 2.5 seconds */
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    }
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {

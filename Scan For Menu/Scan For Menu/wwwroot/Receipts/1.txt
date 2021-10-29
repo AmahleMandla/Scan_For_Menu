@@ -1,0 +1,8 @@
+OrderNum_1038524928
+Date_2021/10/29
+ 
+SubTotal_245
+Gratuity_0,0
+Total_245,0
+Item0_Pumkin steak_1_120
+Item1_Ribs and chips_1_125

@@ -1,5 +1,0 @@
-OrderNum_518082902
-TableNum_1
- 
-Item0_1038_Classic Eggplant Parmesan soup_109_2
-Item1_1014_Pumkin steak_120_2

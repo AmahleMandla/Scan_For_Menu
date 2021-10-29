@@ -1,5 +1,0 @@
-OrderNum_850147461
-TableNum_1
- 
-Item0_1041_Amasole chicken salad_140,99_3
-Item1_1042_Poked-tuna shushi_98,99_1

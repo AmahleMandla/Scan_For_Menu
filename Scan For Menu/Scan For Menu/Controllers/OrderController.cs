@@ -39,6 +39,7 @@ namespace Scan_For_Menu.Controllers     //latest
                 
                     using (StreamWriter sw = new StreamWriter(orderFile, true))
                     {
+                   
                         sw.WriteLine(System.DateTime.Today.ToShortDateString() + "_" + order.OrderId);
                     }
 
@@ -88,36 +89,16 @@ namespace Scan_For_Menu.Controllers     //latest
         }
 
 
-        //soumya
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult payment(IFormCollection keyValuePairs)
+        public ActionResult payment()
         {
 
-            string payment = keyValuePairs["payment"];
-            // if credit/debit chosen return payOnline
-            if ( payment == "Card")
-            {
-                return RedirectToAction(nameof(payOnline)); // return payOnline
-            }
-            else
-            {
-                generateBill();
-                return RedirectToAction(nameof(generateTime)); // , generate meal prep
-            }
-               
-        }
-
-        private void generateBill()
-        {
             CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
             string fileName = order.TableNr.ToString();
             string path = Path.Combine(_hostEnvironment.WebRootPath + "\\Receipts\\", fileName + ".txt");
 
             try
             {
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(path, FileMode.Create))
                 {
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
@@ -142,7 +123,8 @@ namespace Scan_For_Menu.Controllers     //latest
             {
                 Console.WriteLine(ex.Message);
             }
-           
+
+                return RedirectToAction(nameof(generateTime)); // , generate meal prep                          
         }
 
         public ActionResult payOnline()
