@@ -1,5 +1,6 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     "",
     "\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu",
@@ -11,5 +12,10 @@
     "\\Scan For Menu\\Scan For Menu\\Views\\Shared"
   ],
   "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Home\\Index.cshtml",
+=======
+    ""
+  ],
+  "SelectedNode": "\\Scan For Menu.sln",
+>>>>>>> c048e714b48af02bc13db389e3b62a01246ece9f
   "PreviewInSolutionExplorer": false
 }

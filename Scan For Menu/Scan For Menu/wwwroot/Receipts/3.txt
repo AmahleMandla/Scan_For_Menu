@@ -1,7 +1,7 @@
-OrderNum_1381781946
-Date_2021/10/13
-
-SubTotal_25
+OrderNum_1845501661
+Date_2021/10/29
+ 
+SubTotal_70
 Gratuity_0,0
-Total_25,0
-Item0_Island punch_1_25
+Total_70,0
+Item0_Creamy chocolate cupcake_2_35

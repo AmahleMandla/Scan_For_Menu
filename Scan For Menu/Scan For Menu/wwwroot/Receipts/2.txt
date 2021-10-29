@@ -1,8 +1,7 @@
-OrderNum_1377239648
-Date_2021/10/13
-
-SubTotal_49,989998
+OrderNum_1246117117
+Date_2021/10/29
+ 
+SubTotal_70
 Gratuity_0,0
-Total_49,989998
-Item0_Island punch_1_25
-Item1_Bombay smash_1_24,99
+Total_70,0
+Item0_Cheesy beef burger_1_70

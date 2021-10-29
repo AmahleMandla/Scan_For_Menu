@@ -1,5 +1,0 @@
-OrderNum_75591135
-TableNum_7
- 
-Item0_1039_Mexican meat soup_110,99_1
-Item1_1023_Island punch_25_1

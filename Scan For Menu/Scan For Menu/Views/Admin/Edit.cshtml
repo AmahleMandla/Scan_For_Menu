@@ -5,7 +5,7 @@
 @{ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_LayoutStaff.cshtml"; }
 
-<div class="d-flex flex-column justify-content-center" style="margin-left:40%">
+<div class="container-fluid" style="align-content:center; justify-content:center">
     <h1>Edit Item</h1>
     <h4>@Model.ItemName</h4>
     <hr />
@@ -20,7 +20,8 @@
 
                 <div class="form-group">
                     <div class="d-xl-inline-flex justify-content-around">
-                         <img width=250 height=250 style="border:6px solid yellowgreen; border-radius:10%" img src="~/MenuItem/@Model.ItemImage" />
+                        <img width=250 height=250 style="border:6px solid yellowgreen; border-radius:10%" img src="~/MenuItem/@Model.ItemImage" />
+
                         <div>
                             <label asp-for="Image" class="control-label"></label>
                             <input asp-for="Image" type="file" name="Image" accept="image/jpeg" />
@@ -65,8 +66,9 @@
 
                 <div class="form-group">
                     <div class="d-flex flex-column  justify-content-around mx-3">
-                    <input type="submit" formmethod="post" formenctype="multipart/form-data" value="Update" class="btnConfirm" id="submitBtn" />
-                    <button asp-controller="Admin" asp-action="ViewItems" class="btn-secondary ">Cancel</button>
+                        <input type="submit" formmethod="post" formenctype="multipart/form-data" value="Update" class="btnConfirm" id="submitBtn" />
+                        <br />
+                        <button asp-controller="Admin" asp-action="ViewItems" class="btn-secondary " style="border-radius: 10px; font-family: 'Poppins', sans-serif; height: 40px; width: 400px; ">Cancel</button>
                     </div>
                 </div>
             </form>

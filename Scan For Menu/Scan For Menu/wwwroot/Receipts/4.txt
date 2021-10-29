@@ -1,9 +1,7 @@
-OrderNum_1042555412
-Date_2021/10/13
+OrderNum_1180939401
+Date_2021/10/29
  
-SubTotal_451,94
-Gratuity_25,0
-Total_476,94
-Item0_Cosmopolitan_4_45,5
-Item1_Sauvignon wine_3_49,99
-Item2_Waffle_3_39,99
+SubTotal_100
+Gratuity_0,0
+Total_100,0
+Item0_Portuguese Styled chicken_1_100

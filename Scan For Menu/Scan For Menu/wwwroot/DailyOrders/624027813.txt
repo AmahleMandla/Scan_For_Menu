@@ -1,5 +1,0 @@
-OrderNum_624027813
-TableNum_4
- 
-Item0_1024_Bombay smash_24,99_3
-Item1_1014_Pumkin steak_120_3
