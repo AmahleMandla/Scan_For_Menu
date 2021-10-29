@@ -1,7 +1,8 @@
-OrderNum_715109373
+OrderNum_554617214
 Date_2021/10/29
  
-SubTotal_109
-Gratuity_0,0
-Total_109,0
-Item0_Classic Eggplant Parmesan soup_1_109
+SubTotal_220
+Gratuity_20,0
+Total_240,0
+Item0__Cheesy beef burger_2_70
+Item1__Waffle_2_40

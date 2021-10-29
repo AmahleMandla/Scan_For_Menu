@@ -14,53 +14,58 @@
           </div>
     <br />
     <br />
-    @if (Model != null)
-    {
-<div class="d-flex flex-column justify-content-center" style="border: 4px solid green">
+   
+<div class="d-flex flex-column justify-content-center" style="border: 4px solid black; width:650px">
     <div class="d-flex justify-content-center">
-        <h2>Order Num: @ViewBag.OrderNum</h2>
+        <div class="d-flex justify-content-center"><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /><h1 style="color:dimgrey; font-family: monospace sans-serif">Amasole Steakhouse</h1></div>
+        <div>
+            <h2 font-family: monospace sans-serif">Order Num: @ViewBag.OrderNum</h2>
+        </div>
+
     </div>
     <br/>
     <br/>
     <div class="card">
         <div class="card-header">
             <div class="d-flex justify-content-between">
-                <h3>
+                <h3 font-family: monospace sans-serif">
                     ITEM NAME
                 </h3>
-                <h3>QUANTITY</h3>
-                <h3>LINE TOTAL</h3>
+                <h3 font-family: monospace sans-serif">QUANTITY</h3>
+                <h3 font-family: monospace sans-serif">PRICE</h3>
+                <h3 font-family: monospace sans-serif"> TOTAL</h3>
             </div>
         </div>
         @foreach (var obj in Model)
         {
             <div class="card-body text-center">
                 <div class="d-flex justify-content-between">
-                    <h5> @obj.itemName </h5>
-                    <h5> @obj.itemQnty </h5>
-                    <h5>R @obj.LineTotal</h5>
+                    <h5 font-family: monospace sans-serif"> @obj.itemName </h5>
+                    <h5 font-family: monospace sans-serif"> @obj.itemQnty </h5>
+                    <h5 font-family: monospace sans-serif">R @obj.LineTotal</h5>
+                    <h5 font-family: monospace sans-serif">R @obj.LineTotal* @obj.itemQnty</h5>
                 </div>
             </div>
         }
         <div class="d-inline-flex justify-content-end m-5">
-            <h3>
+            <h3  font-family: monospace sans-serif">
                 SubTotal : R @ViewBag.subtot
             </h3>
 
         </div>
         <div class="d-inline-flex justify-content-end m-5">
-            <h3>Gratuity : R @ViewBag.gratuity</h3>
+            <h3 font-family: monospace sans-serif">Gratuity : R @ViewBag.gratuity</h3>
         </div>
         <div class="d-inline-flex justify-content-end m-5">
-            <h3>Total : R @ViewBag.Total</h3>
+            <h3 font-family: monospace sans-serif">Total : R @ViewBag.Total</h3>
         </div>
         <div class="d-inline-flex justify-content-center m-5">
-            <h3>********* Thank you ***********</h3>
+            <h3 font-family: monospace sans-serif">********* Thank you ***********</h3>
         </div>
 
     </div>
 </div>
 
-    }
+    
 </div>
 

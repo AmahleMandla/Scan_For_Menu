@@ -80,7 +80,7 @@ namespace Scan_For_Menu.Controllers
             ViewBag.Total = tblReceipt[0].Total;
             ViewBag.OrderNum = tblReceipt[0].orderNum;
             ViewBag.subtot = tblReceipt[0].subtotal;
-            ViewBag.gratuity = tblReceipt[0].Total;
+            ViewBag.gratuity = tblReceipt[0].gratuity;
 
             return View(tblReceipt);
         }
