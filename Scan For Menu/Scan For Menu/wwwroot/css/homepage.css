@@ -126,7 +126,7 @@
 }
 
 .modal-body {
-    background-color: #DBD095;
+    background-color: #fafafa;
     color: grey;
     font-size: 25px;
     font-family: Impact;
@@ -140,7 +140,7 @@
 }
 
 #table_numbers {
-    background-color: #DBD095;
+    background-color: #fafafa;
     border-radius: 9px;
     width: 150px;
     height: 50px;
@@ -151,7 +151,7 @@
 
 .button {
     background-color: grey;
-    color: #DBD095;
+    color: #f5e8d3;
     text-decoration: none;
     text-align: center;
     padding: 20px 40px 20px 40px;

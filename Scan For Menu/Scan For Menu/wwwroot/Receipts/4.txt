@@ -1,7 +1,0 @@
-OrderNum_1180939401
-Date_2021/10/29
- 
-SubTotal_100
-Gratuity_0,0
-Total_100,0
-Item0_Portuguese Styled chicken_1_100

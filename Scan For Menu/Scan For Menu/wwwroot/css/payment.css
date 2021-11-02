@@ -1,7 +1,8 @@
 ﻿body, html {
-    height: 100% ;
-    overflow:auto;
+    height: 100%;
+    overflow: auto;
     min-height: 100%;
+    background-color: #808080;
 }
 
 /*online payment*/
@@ -117,18 +118,18 @@ body, html {
 .logo {
     font-size: 60px;
     font-family: 'Allison', cursive;
-    color: #555;
+    color: #f5e8d3;
     text-decoration: none;
 }
 
     .logo:hover {
         text-decoration: none;
-        color: #555;
+        color: #f5e8d3;
     }
 
 
 .navbar {
-    background: #d9c19c;
+    background: #808080;
     height: 200px;
     z-index: 999;
     position: relative;

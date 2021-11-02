@@ -1,7 +1,0 @@
-OrderNum_1845501661
-Date_2021/10/29
- 
-SubTotal_70
-Gratuity_0,0
-Total_70,0
-Item0_Creamy chocolate cupcake_2_35

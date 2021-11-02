@@ -1,8 +1,0 @@
-OrderNum_1698961272
-Date_2021/10/29
- 
-SubTotal_125
-Gratuity_0,0
-Total_125,0
-Item0_Bombay smash_1_25
-Item1_Juicy lobster_1_100

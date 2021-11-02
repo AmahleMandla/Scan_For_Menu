@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Scan_For_Menu.Helpers;
 using Scan_For_Menu.Models;
@@ -48,6 +49,7 @@ namespace Scan_For_Menu.Controllers
                 {
                     data = new ReportData();
                     string[] reportdata = sr.ReadLine().Split('_');
+                    data.Date = Date[1];
                     data.gratuity = double.Parse(gratuity[1]);
                     data.subtotal = double.Parse(subtotal[1]);
                     data.Total = double.Parse(total[1]);
@@ -59,8 +61,9 @@ namespace Scan_For_Menu.Controllers
                     reportdataItems.Add(data);
                 }
                 keyValues.Add(tblNum, reportdataItems);
+                sr.Close();
             }
-
+            
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "Receipts", keyValues);
 
             return View(tableNum);
@@ -74,6 +77,7 @@ namespace Scan_For_Menu.Controllers
             }
 
             ViewBag.TblNum = tblNum;
+            HttpContext.Session.SetInt32("TableNumber",tblNum.GetValueOrDefault());
             Dictionary<string, List<ReportData>> keyValues = SessionHelper.GetObjectFromJSON<Dictionary<string, List<ReportData>>>(HttpContext.Session, "Receipts");
             List<ReportData> tblReceipt = keyValues[tblNum.ToString()];
             ViewBag.Date = tblReceipt[0].Date;
@@ -85,14 +89,15 @@ namespace Scan_For_Menu.Controllers
             return View(tblReceipt);
         }
 
-        public IActionResult PrintBill(int? tableNr)
+        [Route("Waiter/PrintBill/{table}")]
+        public IActionResult PrintBill(int? table)
         {
-            if ((tableNr == null) || (tableNr == 0))
+            if ((table== null) || (table == 0))
             {
                 return NotFound();
             }
 
-            String path = Path.Combine(_hostEnvironment.WebRootPath + "\\Receipts\\" + tableNr + ".txt");
+            String path = Path.Combine(_hostEnvironment.WebRootPath + "\\Receipts\\" + table + ".txt");
 
             FileInfo file = new FileInfo(path);
             if (file.Exists)

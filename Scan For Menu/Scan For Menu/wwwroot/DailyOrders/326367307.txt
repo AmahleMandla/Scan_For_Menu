@@ -1,0 +1,5 @@
+OrderNum_326367307
+TableNum_1
+ 
+Item0_1014_Pumkin steak_120_1
+Item1_1015_Ribs and chips_125_1

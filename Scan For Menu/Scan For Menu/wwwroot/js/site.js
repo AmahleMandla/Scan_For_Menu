@@ -149,6 +149,31 @@ function updateCart(item, quantity) {
 
 }
 
+function printBill(tableNumber) {
+    var tableNum = tableNumber;
+    var formdata = new FormData();
+
+    formdata.append("tableNumber", tableNum);
+
+
+    $.ajax({
+        async: true,
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        url: '/Waiter/PrintBill',
+        data: formdata,
+        success: function (data) {
+            if (data.success) {
+                // alert("Added to cart")
+                // $("#cartItem").text(data.Counter);
+            }
+        },
+        error: function () {
+            //alert("Unable to add to cart")
+        }
+    });
+}
 function EnableBtn(cname, ccnum, expmonth, cvv) {
     var btnProceed = document.getElementById('cardPayment');
     if (cname.value != '' && ccnum.value != '' && expmonth.value != '' && cvv.value != '') {

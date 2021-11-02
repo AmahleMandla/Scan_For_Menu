@@ -112,7 +112,7 @@ namespace Scan_For_Menu.Controllers     //latest
                         for (int i = 0; i < order.orderItems.Count; i++)
                         {
                             Cart item = order.orderItems[i];
-                            sw.WriteLine("Item" + i + "_" + item.Category + "_" + item.ItemName + "_" + item.ItemQty + "_" + item.ItemPrice);
+                            sw.WriteLine("Item" + i + "_" + item.ItemName + "_" + item.ItemQty + "_" + item.ItemPrice);
                         }
                         sw.Close();
                     }
