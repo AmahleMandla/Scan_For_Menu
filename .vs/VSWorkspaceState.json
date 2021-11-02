@@ -1,21 +1,11 @@
 {
   "ExpandedNodes": [
-<<<<<<< HEAD
     "",
     "\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu",
     "\\Scan For Menu\\Scan For Menu\\Views",
-    "\\Scan For Menu\\Scan For Menu\\Views\\Admin",
-    "\\Scan For Menu\\Scan For Menu\\Views\\Cart",
-    "\\Scan For Menu\\Scan For Menu\\Views\\Home",
-    "\\Scan For Menu\\Scan For Menu\\Views\\Kitchen",
-    "\\Scan For Menu\\Scan For Menu\\Views\\Shared"
+    "\\Scan For Menu\\Scan For Menu\\Views\\Waiter"
   ],
-  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Home\\Index.cshtml",
-=======
-    ""
-  ],
-  "SelectedNode": "\\Scan For Menu.sln",
->>>>>>> c048e714b48af02bc13db389e3b62a01246ece9f
+  "SelectedNode": "\\Scan For Menu\\Scan For Menu\\Views\\Waiter\\Receipt.cshtml",
   "PreviewInSolutionExplorer": false
 }

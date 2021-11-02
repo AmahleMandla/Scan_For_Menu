@@ -94,11 +94,11 @@ namespace Scan_For_Menu.Controllers
                 cartItemObj.ItemQty = 20;
             }
 
-            HttpContext.Session.SetInt32("GratuityAmt", 0);
+          //  HttpContext.Session.SetInt32("GratuityAmt", 0);
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
 
-
+            Response.Redirect("https://localhost:44366/Cart/ViewCart");
             return RedirectToAction("ViewCart");
         }
 
@@ -113,6 +113,7 @@ namespace Scan_For_Menu.Controllers
 
             HttpContext.Session.SetInt32("CartCounter", cartItems.Count);
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "cartItems", cartItems);
+
             return RedirectToAction("ViewCart");
 
         }

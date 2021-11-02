@@ -1,0 +1,6 @@
+OrderNum_971970202
+TableNum_7
+ 
+Item0_1036_Soweto express_40_2
+Item1_1044_Simple carrot-ginger soup_175_2
+Item2_1057_steak and spinach_175_2

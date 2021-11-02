@@ -1,31 +1,32 @@
 ﻿@{ ViewData["Title"] = "Dashboard";
-                Layout = "~/Views/Shared/_LayoutStaff.cshtml"; }
+                Layout = "~/Views/Shared/_LayoutStaff.cshtml"; 
+   }
+
+<img class="wave" src="~/Images/wave.png">
 <div class="text-center">
 
     <div class="container" style="width:inherit; max-height:inherit;">
         <div class="d-flex justify-content-center"><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /><h1 style="color:dimgrey">Amasole Steakhouse</h1><img width="100" height="100" class="logo_image" src="~/Images/logo.jpeg" /></div>
         <br />
-        <h2 style="color:green;">     Dashboard</h2>
         <br /><br />
     </div>
     <div class="d-inline-flex justify-content-end">
         <a asp-controller="Admin" asp-action="endOfDay" class="btn btn-secondary">End of day</a>
     </div>
     <hr class="my-4">
-    <div class="jumbotron jumbotron-fluid " style=" border:5px dashed grey;" >
+    <div class="container" style=" width:60%; " >
         <div>
-            <a asp-controller="Admin" asp-action="Report" class="btn btn-success btn-lg">Report</a>
+            <a asp-controller="Admin" asp-action="Report" style="width:400px" class="btn btn-success btn-lg">Report</a>
         </div>    <br />
         <br />
-
         <div>
-            <a asp-controller="Admin" asp-action="ViewItems" class="btn btn-success btn-lg">View Menu Items</a>
+            <a asp-controller="Admin" asp-action="ViewItems" class="btn btn-success btn-lg" style="width:400px" >View Menu Items</a>
         </div>
         <br />
         <br />
 
         <div>
-            <a asp-controller="Admin" asp-action="Create" class="btn btn-success btn-lg">Add new item to the menu</a>
+            <a asp-controller="Admin" asp-action="Create" class="btn btn-success btn-lg" style="width:400px">Add new item to the menu</a>
         </div>     <br />
         <br />
     </div>

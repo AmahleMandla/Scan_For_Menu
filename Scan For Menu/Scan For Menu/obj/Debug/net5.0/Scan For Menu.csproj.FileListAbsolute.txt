@@ -2044,3 +2044,11 @@ C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\obj\D
 C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\obj\Debug\net5.0\ref\Scan For Menu.dll
 C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.pdb
 C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Scan For Menu.genruntimeconfig.cache
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutCart.cshtml.g.cs
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.dll
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.dll
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Owin.dll

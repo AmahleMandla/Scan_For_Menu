@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Scan_For_Menu.Data;
 using Scan_For_Menu.Models;
@@ -59,9 +61,10 @@ namespace Scan_For_Menu.Controllers
 
                 }
                 
+                
                
             }
-            return RedirectToAction("Login");
+            return View();
         }
     }
 }

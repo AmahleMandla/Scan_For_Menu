@@ -33,7 +33,7 @@ namespace Scan_For_Menu.Controllers
             mymodel.FoodCategory = categoryObj;
         }
 
-        public IActionResult Report() // (me linked viewReport)
+        public IActionResult Report()
         {
             string[] filePaths = Directory.GetFiles(Path.Combine(_hostEnvironment.WebRootPath + "\\Reports"));
             List<ReportData> reportdataItems = null;

@@ -109,6 +109,40 @@
     }
 }
 
+.wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+.img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+    .img img {
+        width: 500px;
+    }
+
+@media screen and (max-width: 1000px) {
+
+    .img img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .img {
+        display: none;
+    }
+
+    .wave {
+        display: none;
+    }
+}
 
 /*.btnConfirm {
     display: block;

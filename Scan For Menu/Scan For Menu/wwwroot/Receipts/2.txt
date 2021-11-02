@@ -1,8 +1,0 @@
-OrderNum_377829410
-Date_2021/11/02
- 
-SubTotal_175
-Gratuity_25,0
-Total_200,0
-Item0_Bombay smash_1_25
-Item1_Jalapeno burger_2_75

@@ -1,9 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Http;
-@model Scan_For_Menu.Models.ChoosePayment;
+@model Scan_For_Menu.Models.PayOnline;
 @{ ViewData["Title"] = "payOnline";
     Layout = "~/Views/Shared/_LayoutPayment.cshtml";
-    var total = Context.Session.GetString("TotalAmt"); }
-<section></section>
+     }
 <section>
 <div class="row">
     <div class="col-75">
@@ -17,49 +16,54 @@
                         <i class="fab fa-cc-amex" style="color:blue;"></i>
                         <i class="fab fa-cc-mastercard" style="color:red;"></i>
                         <i class="fab fa-cc-discover" style="color:orange;"></i>
-                        <h4> Amount due: R @total</h4>
+                        <h4> Amount due: R @ViewBag.tot</h4>
                     </div>
-                    <div class="container">
-                        <label style="justify-content:left; align-content:center; align-items:center" for="cname">Name on Card</label>
-                        <input style="justify-content:right; align-content:center; align-items:center" type="text" id="cname" name="cardname" placeholder="Mapaseka Nchabeleng" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>
-                        <br /><br />
-                        <label style="justify-content:left; align-content:center; align-items:center" for="ccnum">Card number </label>
-                        <input style="justify-content:right; align-content:center; align-items:center" type="text" id="ccnum" name="cardnumber" placeholder="082675380629" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>
-                        <br /><br />
-                        <label style="justify-content:left; align-content:center; align-items:center" for="expmonth">Expiry Month</label>
-                        <select style="justify-content:right; align-content:center; align-items:center" id="expmonth" name="expmonth" placeholder="September">
-                            <option value=""></option>
-                            <option value=January>January </option>
-                            <option value=February> February </option>
-                            <option value=March> March </option>
-                            <option value=April> April </option>
-                            <option value=May> May </option>
-                            <option value=June> June </option>
-                            <option value=July> July </option>
-                            <option value=August> August </option>
-                            <option value=September> September </option>
-                            <option value=October> October </option>
-                            <option value=November> November </option>
-                            <option value=December> December </option>
-                        </select>
-                        @* <input type="text" id="expmonth" name="expmonth" placeholder="September" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>*@
-                        <br /><br />
-                        <form asp-controller="Order" asp-action="paidOnline" method="post">
+                    <form asp-controller="Order" asp-action="paidOnline" method="post">
+                        <div class="container">
+                            <label style="justify-content:left; align-content:center; align-items:center" for="cname">Name on Card</label>
+                            <input asp-for="name" style="justify-content:right; align-content:center; align-items:center" type="text" id="cname" name="cardname" placeholder="Mapaseka Nchabeleng" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>
+                            <span asp-validation-for="name"></span>
+                            <br /><br />
+                            <label style="justify-content:left; align-content:center; align-items:center" for="ccnum">Card number </label>
+                            <input asp-for="cardNum" maxlength=14 style="justify-content:right; align-content:center; align-items:center" type="text" id="ccnum" name="cardnumber" placeholder="082675380629" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>
+                            <span asp-validation-for="cardNum"></span>
+                            <br /><br />
+                            <label style="justify-content:left; align-content:center; align-items:center" for="expmonth">Expiry Month</label>
+                            <select style="justify-content:right; align-content:center; align-items:center" id="expmonth" name="expmonth" placeholder="September">
+                                <option value=""></option>
+                                <option value=January>January </option>
+                                <option value=February> February </option>
+                                <option value=March> March </option>
+                                <option value=April> April </option>
+                                <option value=May> May </option>
+                                <option value=June> June </option>
+                                <option value=July> July </option>
+                                <option value=August> August </option>
+                                <option value=September> September </option>
+                                <option value=October> October </option>
+                                <option value=November> November </option>
+                                <option value=December> December </option>
+                            </select>
+                            @* <input type="text" id="expmonth" name="expmonth" placeholder="September" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>*@
+                            <br /><br />
+
                             <div class="row" style="justify-content: center; align-content: center">
                                 <div class="col-50" style="justify-content: center; align-content: center">
                                     <div>
                                         <label for="expyear">Expiry Year</label>
-                                        <input type="text" id="expyear" name="expyear" placeholder="2022" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>
+                                        <input asp-for="expiryYear" maxlength=4  type="text" id="expyear" name="expyear" placeholder="2022" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv) " required>
+                                   <span asp-validation-for="expiryYear"></span>
                                     </div>
                                     <div>
                                         <label for="cvv">CVV num</label>
-                                        <input type="text" id="cvv" name="cvv" placeholder="352" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv)" required>
+                                        <input asp-for="cvv" type="text" maxlength=3 id="cvv" name="cvv" placeholder="352" onkeyup=" EnableBtn(cname, ccnum, expmonth, cvv)" required>
+                                  <span asp-validation-for="cvv"></span>
                                     </div>
                                 </div>
                             </div>
                             <input type="submit" style="border-radius: 10px; margin:auto 30% auto 30%; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" value='Proceed' id="cardPayment" disabled="disabled" asp-action="paidOnline" asp-controller="Order">
-                        </form>
-                    </div>
+                    </form>
+                </div>
                 </div>
             </div>
         </div>

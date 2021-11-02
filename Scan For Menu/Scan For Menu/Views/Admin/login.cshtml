@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Scan_For_Menu.Models.Staff
+@{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
@@ -11,7 +12,7 @@
         <img src="~/Images/login.svg">
     </div>
     <div class="login-content">
-        <form action="index.html">
+        <form method="post" asp-controller="Login" asp-action="Login">
             <img src="~/Images/avatar.svg">
             <h2 class="title">Welcome</h2>
             <div class="input-div one">
@@ -19,8 +20,9 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="div">
-                    <h5>Username</h5>
-                    <input type="text" class="input">
+                    <h5>Staff ID</h5>
+                    <input asp-for="StaffId" type="text" class="input">
+
                 </div>
             </div>
             <div class="input-div pass">
@@ -29,10 +31,18 @@
                 </div>
                 <div class="div">
                     <h5>Password</h5>
-                    <input type="password" class="input">
+                    <input asp-for="Password" type="password" class="input">
+
                 </div>
             </div>
             <input type="submit" class="btn" value="Login">
+            <br /><br />
+
+
         </form>
     </div>
+</div>
+<div class="flex-column">
+    <span asp-validation-for="StaffId" class="text-danger"></span>
+    <span asp-validation-for="Password" class="text-danger"></span>
 </div>

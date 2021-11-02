@@ -3,7 +3,7 @@
 @model IEnumerable<Scan_For_Menu.Models.Cart>
 @{
     ViewData["Title"] = "ViewCart";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutCart.cshtml";
     float subTotal = 0;
     float gratuity = 0;
     var togNo = 0;
@@ -11,7 +11,7 @@
 }
 
 
-@if (Context.Session.GetInt32("CartCounter") != null)
+@if (Context.Session.GetInt32("CartCounter") > 0)
 {
 
     <div class="container " style="margin: auto 0px auto 0px; width:stretch; left:10%;">

@@ -85,6 +85,7 @@ namespace Scan_For_Menu.Controllers     //latest
             SessionHelper.SetObjectAsJSON(HttpContext.Session, "order", obj);
             ViewBag.tableNr = obj.TableNr;
             ViewBag.totalAmt = obj.OrderTotal;
+            HttpContext.Session.SetString("TotalAmt", Math.Ceiling(obj.OrderTotal).ToString());
             return View();
         }
 
@@ -129,18 +130,25 @@ namespace Scan_For_Menu.Controllers     //latest
 
         public ActionResult payOnline()
         {
+            ViewBag.tot = HttpContext.Session.GetString("TotalAmt");
             return View();
         }
 
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult paidOnline(IFormCollection iform)
+        public ActionResult paidOnline(PayOnline obj)
         {
-
-            CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
-            order.OrderPaid = true;
-
-            return RedirectToAction(nameof(generateTime));
+            if (ModelState.IsValid)
+            {
+                CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
+                order.OrderPaid = true;
+                
+                return RedirectToAction(nameof(generateTime));
+            }
+            ViewBag.tot = HttpContext.Session.GetString("TotalAmt");
+            return View("payOnline");
+           
         }
 
         public ActionResult generateTime()

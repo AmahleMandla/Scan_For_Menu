@@ -9,10 +9,10 @@ namespace Scan_For_Menu.Models
     public class Staff
     {
         [Key]
-        [Required]
+        [Required(ErrorMessage ="Invalid staff ID")]
         public int StaffId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Invalid password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
@@ -23,6 +23,5 @@ namespace Scan_For_Menu.Models
         public string PhoneNum { get; set; }
 
         public string StaffType { get; set; }
-
     }
 }

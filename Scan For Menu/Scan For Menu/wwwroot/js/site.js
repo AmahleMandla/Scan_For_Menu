@@ -75,6 +75,7 @@ function addToCart(item, quantity, snackbarID) {
     var itemId = $(item).attr("itemid");
     //var itemQty = $(quantity).attr("togNo")
     var itemQty = document.getElementById(quantity).value;
+    document.getElementById(quantity).value = 0;
     // alert(itemQty);
 
     var formdata = new FormData();
@@ -121,6 +122,7 @@ function calcTotal(subtotal, gratuityId) {
 }
 
 function updateCart(item, quantity) {
+
     var itemId = $(item).attr("itemid");
     var itemQty = document.getElementById(quantity).value;
 
@@ -128,7 +130,7 @@ function updateCart(item, quantity) {
 
     formdata.append("itemId", itemId);
     formdata.append("quantity", itemQty);
-
+  
     $.ajax({
         async: true,
         type: 'POST',
@@ -136,17 +138,18 @@ function updateCart(item, quantity) {
         processData: false,
         url: '/Cart/updateCart',
         data: formdata,
-        success: function (data) {
+        success: function () {
+            location.reload();
             if (data.success) {
-                // alert("Added to cart")
+                alert("Added to cart");
                 // $("#cartItem").text(data.Counter);
             }
         },
         error: function () {
+            location.reload();
             //alert("Unable to add to cart")
         }
     });
-
 }
 
 function printBill(tableNumber) {

@@ -103,29 +103,29 @@
     {
         @if (@obj.CategoryId == soups)
         {
-            <div class="card mb-1 justify-content-between" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
-                <div class="d-inline-flex justify-content-around">
-                    <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
-                    <div class="card-body">
-                        <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
-                        <div class="d-flex bd-highlight mb-3">
-                            <div style="font-size:16px;" class="p-2 bd-highlight m-3 text-wrap">@obj.ItemDescr</div>
-                            <div style="font-size:20px; font-style:italic;" class="ml-auto p-2 bd-highlight">R-@obj.ItemPrice</div>
-                        </div>
-
-                        <div class="d-flex justify-content-around" style="justify-content:center;">
-                            <div class="d-inline-flex wrap">
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
-                                <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
-                            </div>
-                            <!--Soumya use this button to get the number of items-->
-                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar1')">Add</button>
-                            <div id="snackbar1"> Added to cart</div>
-                        </div>
-                    </div>
-                </div>
+<div class="card mb-1 justify-content-between" style="display: flex; background-color: #f5e8d3; justify-content: center; border-radius:10px; align-content: center; text-align: center;">
+    <div class="d-inline-flex justify-content-around">
+        <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
+        <div class="card-body">
+            <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
+            <div class="d-flex bd-highlight mb-3">
+                <div style="font-size:16px;" class="p-2 bd-highlight m-3 text-wrap">@obj.ItemDescr</div>
+                <div style="font-size:20px; font-style:italic;" class="ml-auto p-2 bd-highlight">R @obj.ItemPrice</div>
             </div>
+
+            <div class="d-flex justify-content-around" style="justify-content:center;">
+                <div class="d-inline-flex wrap">
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
+                    <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
+                </div>
+                <!--Soumya use this button to get the number of items-->
+                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar1')">Add</button>
+                <div id="snackbar1"> Added to cart</div>
+            </div>
+        </div>
+    </div>
+</div>
             
 
             <br />
@@ -152,29 +152,29 @@
     {
         @if (@obj.CategoryId == steaks)
         {
-            <div class="card mb-1 justify-content-between" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
-                <div class="d-inline-flex justify-content-around">
-                    <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
-                    <div class="card-body">
-                        <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
-                        <div class="d-flex bd-highlight mb-3">
-                            <div style="font-size:16px;" class="p-2 bd-highlight m-3">@obj.ItemDescr</div>
-                            <div style="font-size:25px; font-style:italic;" class="ml-auto p-2 bd-highlight">R-@obj.ItemPrice</div>
-                        </div>
-
-                        <div class="d-flex justify-content-around" style="justify-content:center;">
-                            <div class="d-inline-flex wrap">
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
-                                <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
-                            </div>
-                            <!--Soumya use this button to get the number of items-->
-                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar2')">Add</button>
-                            <div id="snackbar2"> Added to cart</div>
-                        </div>
-                    </div>
-                </div>
+<div class="card mb-1 justify-content-between" style="display: flex; background-color: #f5e8d3; justify-content: center; border-radius:10px; align-content: center; text-align: center;">
+    <div class="d-inline-flex justify-content-around">
+        <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
+        <div class="card-body">
+            <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
+            <div class="d-flex bd-highlight mb-3">
+                <div style="font-size:16px;" class="p-2 bd-highlight m-3">@obj.ItemDescr</div>
+                <div style="font-size:25px; font-style:italic;" class="ml-auto p-2 bd-highlight">R @obj.ItemPrice</div>
             </div>
+
+            <div class="d-flex justify-content-around" style="justify-content:center;">
+                <div class="d-inline-flex wrap">
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
+                    <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
+                </div>
+                <!--Soumya use this button to get the number of items-->
+                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar2')">Add</button>
+                <div id="snackbar2"> Added to cart</div>
+            </div>
+        </div>
+    </div>
+</div>
             <br />
             togNo = togNo + 1;
         }
@@ -199,29 +199,29 @@
     {
         @if (@obj.CategoryId == burgers)
         {
-            <div class="card mb-1 justify-content-between" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
-                <div class="d-inline-flex justify-content-around">
-                    <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
-                    <div class="card-body">
-                        <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
-                        <div class="d-flex bd-highlight mb-3">
-                            <div style="font-size:16px;" class="p-2 bd-highlight m-3">@obj.ItemDescr</div>
-                            <div style="font-size:25px; font-style:italic;" class="ml-auto p-2 bd-highlight">R-@obj.ItemPrice</div>
-                        </div>
-
-                        <div class="d-flex justify-content-around" style="justify-content:center;">
-                            <div class="d-inline-flex wrap">
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
-                                <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
-                            </div>
-                            <!--Soumya use this button to get the number of items-->
-                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar3')">Add</button>
-                            <div id="snackbar3"> Added to cart</div>
-                        </div>
-                    </div>
-                </div>
+<div class="card mb-1 justify-content-between" style="display: flex; background-color: #f5e8d3; justify-content: center; border-radius:10px; align-content: center; text-align: center;">
+    <div class="d-inline-flex justify-content-around">
+        <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
+        <div class="card-body">
+            <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
+            <div class="d-flex bd-highlight mb-3">
+                <div style="font-size:16px;" class="p-2 bd-highlight m-3">@obj.ItemDescr</div>
+                <div style="font-size:25px; font-style:italic;" class="ml-auto p-2 bd-highlight">R @obj.ItemPrice</div>
             </div>
+
+            <div class="d-flex justify-content-around" style="justify-content:center;">
+                <div class="d-inline-flex wrap">
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
+                    <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
+                </div>
+                <!--Soumya use this button to get the number of items-->
+                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar3')">Add</button>
+                <div id="snackbar3"> Added to cart</div>
+            </div>
+        </div>
+    </div>
+</div>
             <br />
             togNo = togNo + 1;
         }
@@ -248,30 +248,30 @@
     {
         @if (@obj.CategoryId == deserts)
         {
-            <div class="card mb-1 justify-content-between" style="display: flex; background-color: beige; justify-content: center; align-content: center; text-align: center;">
-                <div class="d-inline-flex justify-content-around">
-                    <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
-                    <div class="card-body">
-                        <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
-                        <div class="d-flex bd-highlight mb-3">
-                            <div style="font-size:16px;" class="p-2 bd-highlight m-3">@obj.ItemDescr</div>
-                            <div style="font-size:25px; font-style:italic;" class="ml-auto p-2 bd-highlight">R @obj.ItemPrice</div>
-                        </div>
-
-                        <div class="d-flex justify-content-around" style="justify-content:center;">
-                            <div class="d-inline-flex wrap">
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
-                                <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
-                                <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
-                            </div>
-                            <!--Soumya use this button to get the number of items-->
-                            <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar4')">Add</button>
-
-                            <div id="snackbar4"> Added to cart</div>
-                        </div>
-                    </div>
-                </div>
+<div class="card mb-1 justify-content-between" style="display: flex; background-color: #f5e8d3; justify-content: center; border-radius:10px; align-content: center; text-align: center;">
+    <div class="d-inline-flex justify-content-around">
+        <img src="/MenuItem/@obj.ItemImage" width=250 height=250 class="card-img-top" style="width:40%; border-radius: 10%;" align="middle" alt="...">
+        <div class="card-body">
+            <h5 style="font-size:35px;" class="card-title">@obj.ItemName</h5>
+            <div class="d-flex bd-highlight mb-3">
+                <div style="font-size:16px;" class="p-2 bd-highlight m-3">@obj.ItemDescr</div>
+                <div style="font-size:25px; font-style:italic;" class="ml-auto p-2 bd-highlight">R @obj.ItemPrice</div>
             </div>
+
+            <div class="d-flex justify-content-around" style="justify-content:center;">
+                <div class="d-inline-flex wrap">
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border: none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" ; onclick="decrement(@togNo)">-</button>
+                    <input class="tableNum" style="border-color:#555; border-radius:15px; font-size:20px; background-color:beige; height:60px; width:50px" id=@togNo type=number value="0" min=0 max=20>
+                    <button style="border-radius: 40%; background-color: #555 ; color: bisque; border:none; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 28px;" id="order_toggle" onclick="increment(@togNo)">+</button>
+                </div>
+                <!--Soumya use this button to get the number of items-->
+                <button style="border-radius: 10px; background-color: #555 ; color: bisque; border: none; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 18px;" class="button" id="add_to_order" itemid="@obj.ItemId" onclick="addToCart(this, @togNo,'snackbar4')">Add</button>
+
+                <div id="snackbar4"> Added to cart</div>
+            </div>
+        </div>
+    </div>
+</div>
             <br />
             togNo = togNo + 1;
         }
