@@ -179,24 +179,26 @@ namespace Scan_For_Menu.Controllers     //latest
         public  void AddToDb()
         {
             CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
-            OrderLine orderItem = new OrderLine();
+            OrderLine orderItem;
             List <OrderLine> orderLineItems= new List<OrderLine>();
-            orderItem.OrderId = order.OrderId;
+            
             
             ///    for (int i = 0; i < order.orderItems.Count; i++)
             foreach (var cart in order.orderItems)
             {
                 //orderItem.OrderLineId = random.Next(1000, int.MaxValue);
+                orderItem = new OrderLine();
+                orderItem.OrderId = order.OrderId;
                 orderItem.ItemId = cart.ItemId;
                 orderItem.Quantity = cart.ItemQty;
                 orderItem.OrderLineTotal = (decimal)(cart.ItemPrice * cart.ItemQty);
-                orderLineItems.Add(orderItem);
+                amasole_db.OrderLine.Add(orderItem);
+                amasole_db.SaveChanges();
 
                 //amasole_db.OrderLine.Add(orderItem);
             }
-            amasole_db.OrderLine.AddRange(orderLineItems);
+          
             amasole_db.CustomerOrder.Add(order);
-
             amasole_db.SaveChanges();
 
         }

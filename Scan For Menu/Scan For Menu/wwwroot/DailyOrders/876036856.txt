@@ -1,6 +1,0 @@
-OrderNum_876036856
-TableNum_6
- 
-Item0_1028_Broadleaf real discovery_36_3
-Item1_1018_Borderlaise fillet_160_1
-Item2_2_Cheesy beef burger_70_2

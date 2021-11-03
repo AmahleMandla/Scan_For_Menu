@@ -95,7 +95,7 @@ namespace Scan_For_Menu.Controllers
                 {
                     drinkData.Add(data);
                 }
-                else if(data.Category == "Burgers")
+                else if(data.Category == "Burger")
                 {
                     burgerData.Add(data);
                 }
@@ -107,7 +107,7 @@ namespace Scan_For_Menu.Controllers
                 {
                     steakData.Add(data);
                 }
-                else
+                else if (data.Category == "Deserts")
                 {
                     desertData.Add(data);
                 }
@@ -358,9 +358,7 @@ namespace Scan_For_Menu.Controllers
                     {
                         MenuItem item = _dbContext.MenuItem.Find(line.ItemId);
                          string catName = _dbContext.FoodCategory.Find(item.CategoryId).CategoryName;
-                        if (!reportData.ContainsKey(item.ItemId))
-                        {
-
+                        if (!reportData.ContainsKey(item.ItemId)){
                             itemIds.Add(item.ItemId);
                             ReportData data = new ReportData();
                             data.itemName = item.ItemName;
@@ -394,22 +392,22 @@ namespace Scan_For_Menu.Controllers
                 string fileName = fileNames[0] + fileNames[1] + fileNames[2];
                 string path = Path.Combine(_hostEnvironment.WebRootPath + "\\Reports\\" + fileName + ".txt");
 
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-                {
-                    using (StreamWriter sw = new StreamWriter(fs))
+                    using (FileStream fs = new FileStream(path, FileMode.Create))
                     {
+                        using (StreamWriter sw = new StreamWriter(fs))
+                        {
 
-                        sw.WriteLine("Date_" + date);
-                        sw.WriteLine(" ");
-                        foreach (var id in items) {
+                            sw.WriteLine("Date_" + date);
+                            sw.WriteLine(" ");
+                            foreach (var id in items) {
 
-                            ReportData data = reports.GetValueOrDefault(id);
-                            sw.WriteLine(data.Category +"_"+ data.itemName+ "_"+ data.itemQnty+"_"+data.LineTotal);
+                                ReportData data = reports.GetValueOrDefault(id);
+                                sw.WriteLine(data.Category + "_" + data.itemName + "_" + data.itemQnty + "_" + data.LineTotal);
+                            }
+                            sw.Close();
                         }
-                        sw.Close();
-                    }
 
-                }
+                    }
 
             }
             catch (Exception ex)

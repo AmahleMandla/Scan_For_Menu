@@ -1,5 +1,0 @@
-OrderNum_1859467137
-TableNum_4
- 
-Item0_1028_Broadleaf real discovery_36_2
-Item1_1015_Ribs and chips_125_2

@@ -1,5 +1,0 @@
-OrderNum_1568714850
-TableNum_5
- 
-Item0_1023_Island punch_25_5
-Item1_1024_Bombay smash_25_4

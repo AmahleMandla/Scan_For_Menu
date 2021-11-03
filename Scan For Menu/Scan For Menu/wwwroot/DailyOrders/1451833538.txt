@@ -1,6 +1,0 @@
-OrderNum_1451833538
-TableNum_2
- 
-Item0_1027_Shiraz red wine_55_1
-Item1_1028_Broadleaf real discovery_36_2
-Item2_3_The Brookyln_149_1

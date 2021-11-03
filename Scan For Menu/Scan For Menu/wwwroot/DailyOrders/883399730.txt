@@ -1,5 +1,0 @@
-OrderNum_883399730
-TableNum_0
- 
-Item0_1007_Kiddies Caramel milkshake_38_1
-Item1_1028_Broadleaf real discovery_36_1

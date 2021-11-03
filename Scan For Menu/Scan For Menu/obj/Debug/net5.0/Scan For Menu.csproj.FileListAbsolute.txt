@@ -2052,3 +2052,11 @@ C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\D
 C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Lerato\Desktop\Project - WRR301\Final\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Owin.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\bin\Debug\net5.0\Owin.dll
+C:\Users\Amahle\Desktop\3rd year\Scan For Menu\Scan For Menu\obj\Debug\net5.0\Razor\Views\Shared\_LayoutCart.cshtml.g.cs

@@ -1,8 +1,0 @@
-OrderNum_1907944734
-TableNum_0
- 
-Item0_1023_Island punch_25_1
-Item1_1041_Amasole chicken salad_141_2
-Item2_1013_Juicy lobster_100_1
-Item3_1_Jalapeno burger_75_1
-Item4_1002_Waffle_40_1

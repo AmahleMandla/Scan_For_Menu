@@ -1,6 +1,16 @@
 Date_2021/11/03
  
-Drinks_Island punch_8_200
-Soup, Salad and Sides_Mexican meat soup_1_111
-Steaks and Grills_Chicken mushroom_1_150
-Burger_Sunrise burger_2_160
+Drinks_Island punch_2_50
+Deserts_Chocolate and strawberry cake_3_165
+Steaks and Grills_Juicy lobster_1_100
+Steaks and Grills_Borderlaise fillet_3_480
+Drinks_Cosmopolitan_5_230
+Steaks and Grills_Ribs and chips_1_125
+Steaks and Grills_Pumkin steak_2_240
+Soup, Salad and Sides_Poked-tuna shushi_2_198
+Soup, Salad and Sides_Norwegian Salmon_4_324
+Soup, Salad and Sides_Simple carrot-ginger soup_2_350
+Deserts_Amasole kiddies doughnut_6_210
+Deserts_Choc Molten Lava Cake_1_90
+Deserts_Lattice chocolate cake_4_200
+Deserts_latte_1_25

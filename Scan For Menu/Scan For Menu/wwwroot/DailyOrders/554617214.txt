@@ -1,5 +1,0 @@
-OrderNum_554617214
-TableNum_7
- 
-Item0_2_Cheesy beef burger_70_2
-Item1_1002_Waffle_40_2

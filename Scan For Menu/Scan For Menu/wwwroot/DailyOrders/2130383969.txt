@@ -1,4 +1,0 @@
-OrderNum_2130383969
-TableNum_4
- 
-Item0_1016_Chicken mushroom_150_4

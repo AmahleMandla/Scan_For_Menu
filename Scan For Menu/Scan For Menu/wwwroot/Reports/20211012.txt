@@ -1,5 +1,0 @@
-Date_2021/10/12
- 
-Drinks_Red Label_1_40,5
-Burgers_The Brookyln_5_749,95
-Steaks and Grills_Poked-tuna shushi_1_98,99
