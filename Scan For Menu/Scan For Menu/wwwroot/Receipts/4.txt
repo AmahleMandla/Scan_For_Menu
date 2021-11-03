@@ -1,0 +1,7 @@
+OrderNum_1528556903
+Date_2021/11/03
+ 
+SubTotal_150
+Gratuity_50,0
+Total_200,0
+Item0_Chicken mushroom_1_150

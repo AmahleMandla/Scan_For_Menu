@@ -302,7 +302,8 @@ namespace Scan_For_Menu.Controllers
             return View(obj);
         }
 
-        [HttpPost]
+       // [HttpPost]
+       // [Route("Admin/DeletePost/{Id}")]
         public IActionResult DeletePost(int? Id)
         {
             if ((Id == null) || (Id == 0))

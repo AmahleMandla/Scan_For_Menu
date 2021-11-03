@@ -1,0 +1,4 @@
+OrderNum_1528556903
+TableNum_4
+ 
+Item0_1016_Chicken mushroom_150_1

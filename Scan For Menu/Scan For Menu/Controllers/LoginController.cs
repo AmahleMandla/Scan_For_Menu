@@ -30,41 +30,47 @@ namespace Scan_For_Menu.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Login(Staff staffObj)
-        {     
+        {
 
             if (ModelState.IsValid)
             {
-                var curStaff = _dbContext.Staff.Where(a => a.StaffId.Equals(staffObj.StaffId));
-                
+                //  var curStaff = _dbContext.Staff.Where(a => a.StaffId.Equals(staffObj.StaffId));
+                var curStaff = _dbContext.Staff.Find(staffObj.StaffId);
 
-                if (staffObj != null)
+
+                if (curStaff != null)
                 {
-                    HttpContext.Session.SetInt32("StaffId", staffObj.StaffId);
+                    HttpContext.Session.SetInt32("StaffId", curStaff.StaffId);
+
+                    if (curStaff.Password == staffObj.Password)
+                    {
+                        if (curStaff.StaffType.Equals("Admin"))
+                        {
+                            return RedirectToAction("Dashboard", "Admin");
+                        }
+                        else if (curStaff.StaffType.Equals("Kitchen"))
+                        {
+                            return RedirectToAction("Index", "Kitchen");
+                        }
+                        else if (curStaff.StaffType.Equals("Waiter"))
+                        {
+                            return RedirectToAction("Index", "Waiter");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "User name and password is invalid");
+
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "User name and password is invalid");
+                    }
                 }
-
-                if(curStaff.Any(a => a.Password.Equals(staffObj.Password)))
-                {
-                    if (curStaff.Any(a => a.StaffType.Equals("Admin")))
-                    {
-                        return RedirectToAction("Dashboard", "Admin");
-                    }
-
-                    else if (curStaff.Any(a => a.StaffType.Equals("Kitchen")))
-                    {
-                        return RedirectToAction("Index", "Kitchen");
-                    }
-
-                    else if (curStaff.Any(a => a.StaffType.Equals("Waiter")))
-                    {
-                        return RedirectToAction("Index", "Waiter");
-                    }
-
-                }
-                
-                
-               
             }
+            ModelState.AddModelError("", "User name and password is invalid");
             return View();
+            
         }
     }
 }

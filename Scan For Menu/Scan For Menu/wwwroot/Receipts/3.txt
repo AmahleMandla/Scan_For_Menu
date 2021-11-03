@@ -1,0 +1,7 @@
+OrderNum_54660488
+Date_2021/11/03
+ 
+SubTotal_111
+Gratuity_50,0
+Total_161,0
+Item0_Mexican meat soup_1_111
