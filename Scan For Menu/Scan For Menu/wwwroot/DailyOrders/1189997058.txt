@@ -1,0 +1,14 @@
+OrderNum_1189997058
+TableNum_1
+ 
+Item0_1027_Shiraz red wine_55_1
+Item1_1023_Island punch_25_1
+Item2_3_The Brookyln_149_1
+Item3_2_Cheesy beef burger_70_1
+Item4_1_Jalapeno burger_75_1
+Item5_11_Chocolate and strawberry cake_55_1
+Item6_1003_Cheese cake_50_1
+Item7_1005_Chocolate Brownie_50_1
+Item8_1006_New York strawberry pancake_60_1
+Item9_1007_Kiddies Caramel milkshake_38_1
+Item10_1008_Amasole waffle_80_1

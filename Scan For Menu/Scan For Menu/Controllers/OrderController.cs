@@ -143,7 +143,43 @@ namespace Scan_For_Menu.Controllers     //latest
             {
                 CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
                 order.OrderPaid = true;
-                
+                //write to textfile
+
+             //   CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
+                string fileName = order.TableNr.ToString();
+                string path = Path.Combine(_hostEnvironment.WebRootPath + "\\Receipts\\", fileName + ".txt");
+
+                try
+                {
+                    using (FileStream fs = new FileStream(path, FileMode.Create))
+                    {
+                        using (StreamWriter sw = new StreamWriter(fs))
+                        {
+
+                            sw.WriteLine("OrderNum_" + order.OrderId);
+                            sw.WriteLine("Date_" + System.DateTime.Today.ToShortDateString());
+                            sw.WriteLine(" ");
+                            sw.WriteLine("SubTotal" + "_" + (HttpContext.Session.GetString("total")));
+                            sw.WriteLine("Gratuity" + "_" + order.GratuityAmt);
+                            sw.WriteLine("Total" + "_" + order.OrderTotal);
+                            for (int i = 0; i < order.orderItems.Count; i++)
+                            {
+                                Cart item = order.orderItems[i];
+                                sw.WriteLine("Item" + i + "_" + item.ItemName + "_" + item.ItemQty + "_" + item.ItemPrice);
+                            }
+                            sw.Close();
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                HttpContext.Session.SetObjectAsJSON("order", order);
+                //changed the above lines of code
+
                 return RedirectToAction(nameof(generateTime));
             }
             ViewBag.tot = HttpContext.Session.GetString("TotalAmt");
@@ -186,7 +222,6 @@ namespace Scan_For_Menu.Controllers     //latest
             ///    for (int i = 0; i < order.orderItems.Count; i++)
             foreach (var cart in order.orderItems)
             {
-                //orderItem.OrderLineId = random.Next(1000, int.MaxValue);
                 orderItem = new OrderLine();
                 orderItem.OrderId = order.OrderId;
                 orderItem.ItemId = cart.ItemId;

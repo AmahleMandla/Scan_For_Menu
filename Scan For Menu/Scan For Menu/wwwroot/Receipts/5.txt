@@ -1,7 +1,0 @@
-OrderNum_74517417
-Date_2021/11/03
- 
-SubTotal_138
-Gratuity_0,0
-Total_138,0
-Item0_Cosmopolitan_3_46

@@ -1,8 +1,0 @@
-OrderNum_121802118
-Date_2021/11/03
- 
-SubTotal_290
-Gratuity_0,0
-Total_290,0
-Item0_Cosmopolitan_2_46
-Item1_Poked-tuna shushi_2_99

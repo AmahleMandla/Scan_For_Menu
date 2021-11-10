@@ -1,9 +1,0 @@
-OrderNum_1060794932
-Date_2021/11/03
- 
-SubTotal_315
-Gratuity_27,0
-Total_342,0
-Item0_Choc Molten Lava Cake_1_90
-Item1_Lattice chocolate cake_4_50
-Item2_latte_1_25

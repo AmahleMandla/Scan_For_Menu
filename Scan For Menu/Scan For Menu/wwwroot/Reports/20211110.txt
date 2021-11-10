@@ -1,0 +1,22 @@
+Date_2021/11/10
+ 
+Drinks_Bombay smash_2_50
+Steaks and Grills_Juicy lobster_1_100
+Drinks_Broadleaf real discovery_1_36
+Deserts_Chocolate and strawberry cake_3_165
+Deserts_Cheese cake_4_200
+Deserts_Waffle_1_40
+Burger_Jalapeno burger_3_225
+Burger_Cheesy beef burger_3_210
+Burger_The Brookyln_2_298
+Soup, Salad and Sides_Classic Eggplant Parmesan soup_2_218
+Soup, Salad and Sides_Chicken salad_5_620
+Drinks_Cabernet Sauvignon red wine_4_224
+Soup, Salad and Sides_Mexican meat soup_2_222
+Deserts_Creamy chocolate cupcake_2_70
+Drinks_Shiraz red wine_1_55
+Drinks_Island punch_1_25
+Deserts_Chocolate Brownie_1_50
+Deserts_New York strawberry pancake_1_60
+Deserts_Kiddies Caramel milkshake_1_38
+Deserts_Amasole waffle_1_80

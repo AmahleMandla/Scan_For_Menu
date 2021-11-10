@@ -1,0 +1,17 @@
+OrderNum_1189997058
+Date_2021/11/10
+ 
+SubTotal_707
+Gratuity_23,0
+Total_730,0
+Item0_Shiraz red wine_1_55
+Item1_Island punch_1_25
+Item2_The Brookyln_1_149
+Item3_Cheesy beef burger_1_70
+Item4_Jalapeno burger_1_75
+Item5_Chocolate and strawberry cake_1_55
+Item6_Cheese cake_1_50
+Item7_Chocolate Brownie_1_50
+Item8_New York strawberry pancake_1_60
+Item9_Kiddies Caramel milkshake_1_38
+Item10_Amasole waffle_1_80

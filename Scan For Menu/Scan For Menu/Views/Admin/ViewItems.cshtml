@@ -33,18 +33,20 @@
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        
-            <label class="control-label">Filter by Category</label>
-            <select id="categoryName" name="category">
-                <option value="@ViewBag.filter">@ViewBag.filter</option>
-                <option value="All">Show All</option>
-                <option value="Burger">Burger</option>
-                <option value="Steaks and Grills">Steaks and Grills</option>
-                <option value="Drinks">Drinks</option>
-                <option value="Deserts">Deserts</option>
-                <option value="Soup, Salad and Sides">Soup, Salad and Sides</option>
-            </select>
-            <input type="submit" formmethod="post" value="filter" class="btnConfirm" id="submitBtn" />
+          
+                <label class="control-label">Filter by Category</label>
+                <select id="categoryName" name="category">
+                    <option value="@ViewBag.filter">@ViewBag.filter</option>
+                    <option value="All">Show All</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Steaks and Grills">Steaks and Grills</option>
+                    <option value="Drinks">Drinks</option>
+                    <option value="Deserts">Deserts</option>
+                    <option value="Soup, Salad and Sides">Soup, Salad and Sides</option>
+                </select>
+                <input type="submit" style="width:100px" formmethod="post" value="filter" width=200 class="btnConfirm" id="submitBtn" />
+            
+           
         </div>
     </form>
 
