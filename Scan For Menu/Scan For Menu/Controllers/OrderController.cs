@@ -146,7 +146,7 @@ namespace Scan_For_Menu.Controllers     //latest
                 //write to textfile
 
              //   CustomerOrder order = SessionHelper.GetObjectFromJSON<CustomerOrder>(HttpContext.Session, "order");
-                string fileName = order.TableNr.ToString();
+/*                string fileName = order.TableNr.ToString();
                 string path = Path.Combine(_hostEnvironment.WebRootPath + "\\Receipts\\", fileName + ".txt");
 
                 try
@@ -175,7 +175,7 @@ namespace Scan_For_Menu.Controllers     //latest
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                }
+                }*/
 
                 HttpContext.Session.SetObjectAsJSON("order", order);
                 //changed the above lines of code
